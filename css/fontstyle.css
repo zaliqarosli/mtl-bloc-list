@@ -1,0 +1,83 @@
+/* Import Unbounded font */
+@import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap");
+/* Import Roc Grotesk font */
+@import url("https://use.typekit.net/lul8mlu.css");
+
+:root {
+  /* Define type variables */
+  --header-font-family: "Unbounded", sans-serif;
+  --small-font-family: "roc-grotesk", sans-serif;
+  --medium-weight: 500;
+  --regular-weight: 400;
+  --light-weight: 300;
+  --extralight-weight: 200;
+}
+
+html {
+  /* Add backup font family and size */
+  font-family: var(--small-font-family);
+  font-weight: var(--regular-weight);
+  font-style: normal;
+  font-size: calc(10px + 0.390625vw);
+}
+
+/* Set type style */
+.unbounded-h1,
+h1 {
+  /* XL H1 - 120/120 Unbounded Medium Uppercase  */
+  font-family: var(--header-font-family);
+  font-optical-sizing: auto;
+  font-weight: var(--medium-weight);
+  font-size: 6rem;
+  line-height: 6rem;
+  text-transform: uppercase;
+}
+
+.unbounded-h2,
+h2 {
+  /* L H2 - 70/80 Unbounded Regular  */
+  font-family: var(--header-font-family);
+  font-optical-sizing: auto;
+  font-weight: var(--regular-weight);
+  font-size: 3.5rem;
+  line-height: 4rem;
+}
+
+.unbounded-h3,
+h3 {
+  /* M H3 - 40/50 Unbounded Light  */
+  font-family: var(--header-font-family);
+  font-optical-sizing: auto;
+  font-weight: var(--light-weight);
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+.roc-grotesk-h4,
+h4,
+label,
+button {
+  /* S H4 -30/40 Roc Grotesk Medium  */
+  font-family: var(--small-font-family);
+  font-weight: var(--medium-weight);
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.roc-grotesk-p,
+p {
+  /* XS P - 30/40 Roc Grotesk ExtraLight  */
+  font-family: var(--small-font-family);
+  font-weight: var(--extralight-weight);
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.roc-grotesk-footer,
+footer p {
+  /* XXS Footer - 20/40 Roc Grotesk Regular  */
+  font-family: var(--small-font-family);
+  font-weight: var(--regular-weight);
+  font-size: 1rem;
+  line-height: 0rem;
+}
