@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MTL BLOC LIST: Join the Directory</title>
+    <link rel="icon" href="mtl-bloc-list-favicon.png" size="16x16" />
+    <link rel="stylesheet" href="css/fontstyle.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/animation.css" />
+    <script
+      src="https://kit.fontawesome.com/b611ca2cca.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h1 class="title-logo slide-in-left"><a href="/">mtl bloc list</a></h1>
+        <span class="slide-in-right">
+          <a class="menu-target grow-on-hover" href="/directory.html"
+            ><img
+              class="menu-icon tilt-shaking graphic"
+              src="images/rock-arrow-light-thick.svg"
+              alt="rock outline with arrow pointing up-right" /></a
+        ></span>
+      </nav>
+      <div class="background-holds">
+        <img
+          src="images/yellow.svg"
+          alt="yellow climbing hold"
+          class="yellow-hold slide-in-top graphic"
+        />
+      </div>
+      <h1>join the directory</h1>
+    </header>
+    <main>
+      <form method="post" action="submit.php">
+        <div>
+          <h2>tell us about your gym</h2>
+          <p>
+            Provide us with information you'd like featured in the directory,
+            and we'll get in touch before publishing!
+          </p>
+          <p>All fields are required.</p>
+        </div>
+
+        <!-- Name of gym -->
+        <div>
+          <label for="name" class="roc-grotesk-p">Name of gym</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            placeholder="Enter here"
+            class="roc-grotesk-p"
+            autocomplete="name"
+          />
+        </div>
+        <!-- What kind of climber do you bring? -->
+        <div>
+          <div>
+            <label for="climber">the kind of climber it brings</label>
+          </div>
+          <div class="slider-container form-slider">
+            <label for="climber" class="left-label roc-grotesk-h4"
+              >dirtbag</label
+            >
+            <input
+              type="range"
+              id="climber"
+              name="climber"
+              class="slider"
+              min="0"
+              max="100"
+            />
+            <label for="climber" class="right-label roc-grotesk-h4"
+              >comp kid</label
+            >
+          </div>
+        </div>
+        <!-- Street Address of gym -->
+        <div>
+          <label for="street-address">street address</label>
+          <input
+            type="text"
+            id="street-address"
+            name="street-address"
+            required
+            placeholder="Enter here"
+            class="roc-grotesk-p"
+            autocomplete="street-address"
+          />
+        </div>
+        <!-- postal code of gym -->
+        <div>
+          <label for="postal-code">postal code</label>
+          <input
+            type="text"
+            id="postal-code"
+            name="postal-code"
+            required
+            placeholder="Enter here"
+            class="roc-grotesk-p"
+            autocomplete="postal-code"
+          />
+        </div>
+        <!-- website of gym -->
+        <div>
+          <label for="url">website</label>
+          <input
+            type="url"
+            id="url"
+            name="url"
+            required
+            placeholder="Enter here"
+            class="roc-grotesk-p"
+            autocomplete="url"
+          />
+        </div>
+        <!-- Three words that describe the gym -->
+        <div>
+          <label for="name-gym">Three words that describe the gym</label>
+          <input
+            type="text"
+            id="describe-gym"
+            name="describe-gym"
+            required
+            placeholder="Enter here"
+            class="roc-grotesk-p"
+          />
+        </div>
+        <!-- Synopsis of gym -->
+        <div>
+          <label for="synopsis-gym"
+            >Synopsis of the gym’s history, story, and vibe in 1200 characters
+          </label>
+          <textarea
+            name="synopsis-gym"
+            id="synopsis-gym"
+            required
+            placeholder="Enter here"
+            maxlength="1200"
+            cols="52"
+            rows="1"
+            class="roc-grotesk-p"
+          ></textarea>
+        </div>
+        <!-- Logo upload -->
+        <div>
+          <label for="logo">Logo (.png)</label>
+          <input
+            type="file"
+            id="logo"
+            name="logo"
+            accept="image/png"
+            class="roc-grotesk-footer"
+          />
+        </div>
+        <!-- Media upload -->
+        <div>
+          <label for="media"
+            >Three pieces of media (.svg, .png, .jpeg, .mp4)</label
+          >
+          <input
+            type="file"
+            id="media"
+            name="media"
+            accept="image/png image/jpeg image/svg+xml video/mp4"
+            class="roc-grotesk-footer"
+          />
+        </div>
+        <!-- Email addres -->
+        <div>
+          <label for="email">Email address</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="Enter here"
+            class="roc-grotesk-p"
+            autocomplete="email"
+          />
+        </div>
+        <!-- Submit button -->
+        <button type="submit">submit</button>
+      </form>
+    </main>
+    <footer>
+      <!-- Icons section -->
+      <nav class="nav-footer">
+        <h3>
+          <a href="directory.html">
+            <i class="fa-solid fa-arrow-left rotate-45"></i> back
+          </a>
+        </h3>
+        <h3>
+          <a href="/">
+            home <i class="fa-solid fa-arrow-right rotate-45"></i>
+          </a>
+        </h3>
+      </nav>
+      <div class="contact-links">
+        <span class="icon-container">
+          <a class="footer-icon grow-on-hover" href="#"
+            ><i class="fa-brands fa-linkedin"></i
+          ></a>
+          <a class="footer-icon grow-on-hover" href="#"
+            ><i class="fa-brands fa-square-github"></i
+          ></a>
+        </span>
+        <p><a href="#">design by zaliqa rosli</a></p>
+        <p>zaliqarosli@gmail.com</p>
+      </div>
+    </footer>
+  </body>
+</html>

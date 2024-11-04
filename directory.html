@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MTL BLOC LIST: Montreal's Bouldering Gym Directory</title>
+    <link rel="icon" href="mtl-bloc-list-favicon.png" size="16x16" />
+    <link rel="stylesheet" href="css/fontstyle.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/animation.css" />
+  </head>
+  <body class="directory-page">
+    <section class="directory-map">
+      <img
+        src="images/map_dark_light.jpg"
+        alt="Grey, black, white Greater Montreal map"
+      />
+    </section>
+    <section class="directory-content">
+      <nav>
+        <p>Montreal's Bouldering Gym Directory</p>
+        <h2 class="close-icon"><a href="/">X</a></h2>
+      </nav>
+      <div class="directory-list">
+        <fieldset class="filter">
+          <legend>Filter:</legend>
+          <button class="filter-chip roc-grotesk-footer">
+            Beginner <span>X</span>
+          </button>
+          <button class="filter-chip roc-grotesk-footer">
+            New-school <span>X</span>
+          </button>
+          <button class="filter-chip roc-grotesk-footer">
+            Old-school <span>X</span>
+          </button>
+        </fieldset>
+        <ul id="directory-list-items" class="unbounded-h3"></ul>
+        <p class="roc-grotesk-footer right-align">
+          Not on the list?
+          <span class="underline"><a href="form.html">Join</a></span
+          >.
+        </p>
+      </div>
+    </section>
+    <script src="js/directory.js"></script>
+  </body>
+</html>

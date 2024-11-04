@@ -24,6 +24,7 @@ body {
 header {
   position: relative;
   overflow-x: clip;
+  text-align: center;
 }
 
 nav {
@@ -34,6 +35,7 @@ nav {
 
 a:link {
   text-decoration: none;
+  color: inherit;
 }
 
 a:visited {
@@ -78,6 +80,9 @@ a:active {
 
 img {
   width: 100%;
+}
+
+img.graphic {
   min-width: 4rem;
   max-width: 6rem;
 }
@@ -96,6 +101,10 @@ h3::first-letter,
 label::first-letter,
 button::first-letter {
   text-transform: capitalize;
+}
+
+h1 {
+  padding: 4rem;
 }
 
 .quiz-container {
@@ -164,23 +173,24 @@ button::first-letter {
 
 .slider-container {
   margin: auto auto;
-  max-width: 80rem;
+  max-width: 78rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
-label[for="kind-of-climber"] {
-  /* max-width: 10rem; */
+.slider-container label {
   flex: 1;
-  padding: 0 1rem;
 }
 
 .left-label {
   text-align: right;
+  padding: 0 1rem 0 0;
 }
 
 .right-label {
   text-align: left;
+  padding: 0 0 0 1rem;
 }
 
 .slider {
@@ -274,7 +284,6 @@ main {
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-evenly;
-  align-items: flex-end;
   overflow-x: clip;
 }
 
@@ -285,6 +294,10 @@ main p {
   padding-bottom: 1.5rem;
 }
 
+main.landing-page * {
+  align-self: flex-end;
+}
+
 article {
   max-width: 60vw;
 }
@@ -293,7 +306,6 @@ article {
   text-align: right;
   display: flex;
   justify-content: flex-end;
-  align-items: flex-end;
 }
 
 #call-to-action img {
@@ -306,9 +318,6 @@ footer {
   background-color: var(--light);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
   padding: 2rem;
   width: 100%;
   position: relative;
@@ -316,8 +325,24 @@ footer {
   overflow-x: clip;
 }
 
-footer * {
+.nav-footer {
+  padding-bottom: 4rem;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+footer *,
+footer *::first-letter {
   color: var(--grey);
+  text-transform: lowercase;
+}
+
+.rotate-45 {
+  transform: rotate(-45deg);
 }
 
 .icon-container {
@@ -330,6 +355,73 @@ footer * {
   font-size: 1.5rem;
   line-height: 1rem;
   margin-right: 0.25rem;
+}
+
+form h2 {
+  padding-bottom: 2rem;
+}
+
+form > div {
+  margin-bottom: 5rem;
+}
+
+form label {
+  display: block;
+  padding-bottom: 1rem;
+}
+
+form input,
+form textarea {
+  color: var(--light);
+  background-color: transparent;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="url"],
+form textarea {
+  border: none;
+  border-bottom: 1px solid var(--light);
+}
+
+form input::placeholder,
+form textarea::placeholder {
+  color: var(--grey);
+  font-size: 2rem;
+  line-height: 2rem;
+}
+
+form input:focus,
+form textarea:focus {
+  outline: none;
+}
+
+form textarea {
+  display: block;
+  resize: vertical;
+  border-left: 1px solid var(--light);
+  padding: 1rem;
+}
+
+.form-slider {
+  margin-top: 1rem;
+}
+
+.form-slider label {
+  flex: 0;
+}
+
+input::file-selector-button {
+  font-family: var(--small-font-family);
+  font-weight: var(--extralight-weight);
+  font-size: 1rem;
+  line-height: 0rem;
+  background-color: var(--light);
+  color: var(--dark);
+  padding: 1.25rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  margin-right: 1rem;
 }
 
 /* Media Queries */
@@ -380,5 +472,93 @@ footer * {
   }
   .about {
     max-width: 80vw;
+  }
+}
+
+/* --- DIRECTORY PAGE --- */
+.directory-page {
+  display: flex;
+  height: 100vh;
+  background-color: var(--dark);
+  justify-content: space-evenly;
+  color: var(--light);
+}
+
+.directory-map img {
+  max-height: 100vh;
+}
+
+.directory-content {
+  padding: 2.5rem 3rem 2rem;
+  display: flex;
+  flex-flow: column;
+  /* justify-content: space-between; */
+  /* flex-basis: 45%; */
+  flex-grow: 2;
+}
+
+.directory-content nav {
+  margin-bottom: 4rem;
+}
+
+.directory-content > nav > * {
+  max-width: 12rem;
+}
+
+fieldset {
+  color: var(--light);
+  border-radius: 1rem;
+  padding-top: 1rem;
+  max-width: fit-content;
+  /* background-color: var(--blue); */
+  border: none;
+  margin: 2rem 0;
+}
+
+fieldset legend {
+  display: contents;
+}
+
+button.filter-chip {
+  padding: 1.25rem 1rem;
+  margin-bottom: 0.5rem;
+  margin-right: 0;
+}
+
+/* button.filter-chip:first-of-type {
+  margin-left: 0;
+} */
+
+/* button.filter-chip:last-of-type {
+  margin-right: 0;
+} */
+
+button.filter-chip > span {
+  padding-left: 0.3rem;
+}
+
+ul {
+  margin: 3rem 0;
+}
+
+li {
+  list-style: none;
+  padding-bottom: 1rem;
+}
+
+.right-align {
+  text-align: right;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+/* Media Queries */
+/*  tablet size */
+@media screen and (max-width: 780px) {
+  .directory-page {
+    flex-flow: column-reverse;
+    justify-content: flex-end;
   }
 }
