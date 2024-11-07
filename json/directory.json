@@ -1,14 +1,44 @@
 {
   "items": [
-    "Allez Up",
-    "Beta Bloc",
-    "Bloc Shop",
-    "Cafe Bloc",
-    "Le Crux",
-    "Le Mouv’",
-    "Nomad Bloc",
-    "OffSite Climbing",
-    "Rose Bloc",
-    "Shakti Rock Gym"
+    {
+      "name": "Allez Up",
+      "href": "directory/allezup.html"
+    },
+    {
+      "name": "Beta Bloc",
+      "href": "directory/betabloc.html"
+    },
+    {
+      "name": "Bloc Shop",
+      "href": "directory/blocshop.html"
+    },
+    {
+      "name": "Café Bloc",
+      "href": "directory/cafebloc.html"
+    },
+    {
+      "name": "Le Crux",
+      "href": "directory/lecrux.html"
+    },
+    {
+      "name": "Le Mouv’",
+      "href": "directory/lemouv.html"
+    },
+    {
+      "name": "Nomad Bloc",
+      "href": "directory/nomadbloc.html"
+    },
+    {
+      "name": "OffSite Climbing",
+      "href": "directory/offsiteclimbing.html"
+    },
+    {
+      "name": "Rose Bloc",
+      "href": "directory/rosebloc.html"
+    },
+    {
+      "name": "Shakti Rock Gym",
+      "href": "directory/shaktirockgym.html"
+    }
   ]
 }
