@@ -35,7 +35,13 @@
       <h1>join the directory</h1>
     </header>
     <main>
-      <form method="post" action="submit.php">
+      <!-- <form method="post" action="submit.php"> -->
+      <form
+        method="post"
+        action="mailto:zaliqarosli@gmail.com?subject=Request:%20Join%20MTL%20BLOC%20LIST"
+        enctype="text/plain"
+        validate
+      >
         <div>
           <h2>tell us about your gym</h2>
           <p>
@@ -169,6 +175,7 @@
             name="media"
             accept="image/png image/jpeg image/svg+xml video/mp4"
             class="roc-grotesk-footer"
+            multiple
           />
         </div>
         <!-- Email addres -->
@@ -196,11 +203,11 @@
             <i class="fa-solid fa-arrow-left rotate-45"></i> back
           </a>
         </h3>
-        <h3>
-          <a href="/">
-            home <i class="fa-solid fa-arrow-right rotate-45"></i>
-          </a>
-        </h3>
+        <a href="#" id="scroll-to-top" class="grow-on-hover">
+          <p class="nav-inner-circle">
+            <i class="fa-solid fa-arrow-up"></i>
+          </p>
+        </a>
       </nav>
       <!-- Icons section -->
       <div class="contact-links">
