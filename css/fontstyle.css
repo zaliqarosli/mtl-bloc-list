@@ -33,6 +33,15 @@ h1 {
   text-transform: uppercase;
 }
 
+.unbounded-xlh2 {
+  /* XL H2 - 70/80 Unbounded Regular  */
+  font-family: var(--header-font-family);
+  font-optical-sizing: auto;
+  font-weight: var(--regular-weight);
+  font-size: 3.5rem;
+  line-height: 4rem;
+}
+
 .unbounded-h2,
 h2 {
   /* L H2 - 60/70 Unbounded Regular  */
