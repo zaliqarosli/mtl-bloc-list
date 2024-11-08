@@ -517,6 +517,43 @@ input::file-selector-button {
   .about {
     max-width: 80vw;
   }
+
+  h1.form-header,
+  .gym-page header h1,
+  .gym-page main h1 {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+
+  form textarea#synopsis-gym {
+    width: 34rem;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  h1.form-header,
+  .gym-page header h1,
+  .gym-page main h1 {
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+
+  form h2,
+  .gym-page header h2,
+  .gym-page main h2 {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+
+  form textarea#synopsis-gym {
+    width: 24rem;
+  }
+}
+
+@media screen and (max-width: 344px) {
+  main {
+    padding: 5rem 4rem;
+  }
 }
 
 /* --- DIRECTORY PAGE --- */
@@ -678,7 +715,7 @@ a.join:active {
   float: right;
   top: 20vh;
   z-index: 1000;
-  padding: 2.5rem 2rem 2.5rem 1.5rem;
+  padding: 2.5rem 2rem 2.5rem 1.25rem;
   align-items: flex-start;
 }
 
@@ -726,13 +763,13 @@ a.join:active {
 
 .gym-header .overlay-img {
   position: absolute;
-  top: 13rem;
-  right: -2rem;
-  width: 50%;
+  top: calc(2 * var(--gym-page-pad));
+  right: 0rem;
+  width: 40%;
   z-index: 999;
 }
 
-main.gym-page {
+main.gym-page-main {
   background-color: unset;
   border-radius: 0;
   top: 0;
@@ -745,7 +782,7 @@ section.the-story {
   display: flex;
   justify-content: flex-end;
   margin-right: var(--gym-page-pad);
-  margin-top: 5rem;
+  margin-top: var(--gym-page-pad);
 }
 
 section.the-story * {
@@ -789,6 +826,7 @@ section.neighbourhood p {
 
 .neighbourhood-content h1 {
   padding-right: 0;
+  padding-top: 0;
 }
 
 .neighbourhood-content h2 {
@@ -805,7 +843,8 @@ section.neighbourhood p {
   padding: 4rem;
   position: absolute;
   right: var(--gym-page-pad);
-  bottom: -25%;
+  /* leave bottom value as auto */
+  /* bottom: -25%; */
   z-index: 999;
   max-width: 30%;
   border-radius: 0.5rem;
@@ -844,6 +883,7 @@ section.the-wall img {
   /* position: absolute;
   right: 0;
   top: 0; */
+  margin-left: 2rem;
 }
 
 section.the-wall .gym-logo {
@@ -879,7 +919,7 @@ section.the-wall .gym-logo {
 }
 
 .social-initiatives article {
-  max-width: none;
+  max-width: 100%;
   padding: var(--gym-page-pad);
   position: absolute;
   bottom: 0;
@@ -895,7 +935,6 @@ section.the-wall .gym-logo {
   grid-template-columns: repeat(2, minmax(40%, 1fr));
   row-gap: 3rem;
   column-gap: 6rem;
-  /* grid-auto-rows: minmax(100px, auto); */
 }
 
 .social-initiatives h1,
@@ -946,4 +985,135 @@ section.the-wall .gym-logo {
 
 #scroll-to-top *::first-letter {
   color: var(--light);
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 1200px) {
+  .social-initiatives article {
+    column-gap: 2rem;
+    row-gap: 0rem;
+    grid-auto-flow: column;
+  }
+
+  .social-initiatives h1 {
+    grid-column: 1 / 2;
+    padding-bottom: var(--gym-page-pad);
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .the-vibe {
+    max-width: 50%;
+    margin-top: 3rem;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  /* :root {
+    --gym-page-pad: 6rem;
+  } */
+  section.the-story {
+    flex-flow: column-reverse;
+    /* padding: calc(var(--gym-page-pad) / 2); */
+    margin-right: 0;
+  }
+
+  section.the-story .keywords {
+    padding-top: 0;
+    width: 100%;
+  }
+
+  section.the-story article {
+    padding-top: var(--gym-page-pad);
+    width: 100%;
+    max-width: none;
+  }
+
+  .neighbourhood-content h1 {
+    padding-left: 0;
+  }
+
+  .neighbourhood-content img {
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .neighbourhood-content h2 {
+    padding-bottom: 1rem;
+  }
+
+  /* .the-vibe {
+    max-width: 50%;
+    margin-top: 3rem;
+  } */
+
+  /* .social-initiatives article {
+    column-gap: 2rem;
+    row-gap: 0rem;
+    grid-auto-flow: column;
+  }
+
+  .social-initiatives h1 {
+    grid-column: 1 / 2;
+    padding-bottom: var(--gym-page-pad);
+  } */
+}
+
+@media screen and (max-width: 430px) {
+  .gym-header h1 {
+    padding-right: 1.5rem;
+  }
+  section.the-wall {
+    padding-top: calc(var(--gym-page-pad) * 2);
+  }
+  section.the-wall img {
+    width: 30%;
+  }
+  section.the-wall article.the-wall-container {
+    padding-top: calc(var(--gym-page-pad) / 2);
+  }
+}
+
+@media screen and (max-width: 390px) {
+  /* .gym-header h1 {
+    padding-right: 1.5rem;
+  } */
+
+  .the-vibe {
+    padding: 3rem;
+  }
+
+  .social-initiatives article {
+    display: inline;
+  }
+
+  .social-initiatives h1 {
+    padding-bottom: calc(var(--gym-page-pad) / 2);
+  }
+
+  .social-initiatives p {
+    padding-top: 3rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .social-initiatives article {
+    display: inline;
+  }
+
+  .social-initiatives h1 {
+    padding-bottom: calc(var(--gym-page-pad) / 2);
+  }
+
+  .social-initiatives p {
+    padding-top: 3rem;
+  }
+}
+
+@media screen and (max-width: 344px) {
+  section.the-wall {
+    padding-top: calc(var(--gym-page-pad) * 3);
+  }
 }
