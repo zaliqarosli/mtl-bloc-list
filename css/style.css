@@ -469,7 +469,7 @@ input::file-selector-button {
 }
 
 /* Media Queries */
-/*  tablet size */
+
 @media screen and (max-width: 780px) {
   main {
     padding: 5rem 13rem 4rem 5rem;
@@ -560,7 +560,6 @@ input::file-selector-button {
 
 .directory-page {
   display: flex;
-  /* height: 100vh; */
   background-color: var(--dark);
   justify-content: space-evenly;
   color: var(--light);
@@ -603,13 +602,8 @@ input::file-selector-button {
   display: flex;
   flex-flow: column;
   justify-content: space-between;
-  /* flex-basis: 45%; */
   flex-grow: 2;
 }
-
-/* .directory-content nav {
-  margin-bottom: 4rem;
-} */
 
 .directory-content > nav > * {
   max-width: 12rem;
@@ -620,7 +614,6 @@ fieldset {
   border-radius: 1rem;
   padding-top: 1rem;
   max-width: fit-content;
-  /* background-color: var(--blue); */
   border: none;
   padding: 2rem 0;
 }
@@ -636,21 +629,9 @@ button.filter-chip {
   line-height: 0rem;
 }
 
-/* button.filter-chip:first-of-type {
-  margin-left: 0;
-} */
-
-/* button.filter-chip:last-of-type {
-  margin-right: 0;
-} */
-
 button.filter-chip > span {
   padding-left: 0.3rem;
 }
-
-/* ul {
-  margin: 3rem 0;
-} */
 
 li {
   list-style: none;
@@ -708,9 +689,6 @@ a.join:active {
   flex-flow: column;
   border-top-left-radius: 4.5rem;
   border-bottom-left-radius: 4.5rem;
-  /* width: 7rem; */
-  /* position: fixed; */
-  /* right: 0; */
   position: sticky;
   float: right;
   top: 20vh;
@@ -722,10 +700,6 @@ a.join:active {
 .nav-bar-circle {
   background-color: var(--light);
   border-radius: 100%;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
-  /* padding: 0.25rem; */
 }
 
 .nav-bar-circle:not(:last-child) {
@@ -733,11 +707,9 @@ a.join:active {
 }
 
 .nav-inner-circle {
-  /* border: 1px solid var(--dark); */
   border-radius: 100%;
   display: block;
   color: var(--grey);
-  /* padding: 0.25rem; */
   width: 3.5rem;
   height: 3.5rem;
   display: flex;
@@ -753,7 +725,6 @@ a.join:active {
 
 .gym-header h1 {
   position: absolute;
-  /* top: 33.5rem; */
   bottom: 4rem;
   right: 40%;
   z-index: 999;
@@ -790,7 +761,6 @@ section.the-story * {
 }
 
 section.the-story article {
-  /* padding-right: 3rem; */
   width: 60%;
 }
 
@@ -861,7 +831,6 @@ section.neighbourhood > img {
 section.the-wall {
   background-color: var(--dark);
   padding-top: var(--gym-page-pad);
-  /* position: relative; */
 }
 
 section.the-wall article.the-wall-container {
@@ -869,27 +838,15 @@ section.the-wall article.the-wall-container {
   padding: 0 var(--gym-page-pad);
 }
 
-/* section.the-wall .img-container {
-  position: absolute;
-  left: 60%;
-  top: var(--gym-page-pad);
-  float: right;
-} */
-
 section.the-wall img {
   width: 40%;
-  /* display: block; */
   float: right;
-  /* position: absolute;
-  right: 0;
-  top: 0; */
   margin-left: 2rem;
 }
 
 section.the-wall .gym-logo {
   clear: both;
   margin-bottom: 3rem;
-  margin-left: 2rem;
 }
 
 section.the-wall .gym-logo {
@@ -909,7 +866,6 @@ section.the-wall .gym-logo {
 .social-initiatives {
   background-color: var(--grey);
   position: relative;
-  /* min-height: 100vh; */
   min-height: 110rem;
   height: auto;
 }
@@ -925,12 +881,6 @@ section.the-wall .gym-logo {
   bottom: 0;
   right: 0;
   max-height: 100%;
-  /* display: flex;
-  flex-flow: column wrap-reverse;
-  justify-content: space-between;
-  text-align: right;
-  align-items: flex-start; */
-
   display: grid;
   grid-template-columns: repeat(2, minmax(40%, 1fr));
   row-gap: 3rem;
@@ -940,9 +890,6 @@ section.the-wall .gym-logo {
 .social-initiatives h1,
 .social-initiatives p {
   padding: 0;
-  /* padding-top: 7rem; */
-  /* flex-basis: 50%; */
-  /* max-width: 50%; */
 }
 
 .one {
@@ -971,16 +918,8 @@ section.the-wall .gym-logo {
 }
 
 #scroll-to-top {
-  /* font-size: 2rem; */
   background-color: var(--grey);
-  /* color: var(--light); */
-  /* padding: 1rem; */
   border-radius: 50%;
-  /* display: block;
-  width: 3.5rem;
-  height: 3.5rem;
-  text-align: center; */
-  /* line-height: 4rem; */
 }
 
 #scroll-to-top *::first-letter {
@@ -1011,12 +950,8 @@ section.the-wall .gym-logo {
 }
 
 @media screen and (max-width: 540px) {
-  /* :root {
-    --gym-page-pad: 6rem;
-  } */
   section.the-story {
     flex-flow: column-reverse;
-    /* padding: calc(var(--gym-page-pad) / 2); */
     margin-right: 0;
   }
 
@@ -1043,22 +978,6 @@ section.the-wall .gym-logo {
   .neighbourhood-content h2 {
     padding-bottom: 1rem;
   }
-
-  /* .the-vibe {
-    max-width: 50%;
-    margin-top: 3rem;
-  } */
-
-  /* .social-initiatives article {
-    column-gap: 2rem;
-    row-gap: 0rem;
-    grid-auto-flow: column;
-  }
-
-  .social-initiatives h1 {
-    grid-column: 1 / 2;
-    padding-bottom: var(--gym-page-pad);
-  } */
 }
 
 @media screen and (max-width: 430px) {
@@ -1077,10 +996,6 @@ section.the-wall .gym-logo {
 }
 
 @media screen and (max-width: 390px) {
-  /* .gym-header h1 {
-    padding-right: 1.5rem;
-  } */
-
   .the-vibe {
     padding: 3rem;
   }
