@@ -253,7 +253,7 @@ button {
   padding: 0.75rem 1.5rem;
   background-color: var(--green);
   border-radius: 50px;
-  margin: 0 0.5rem;
+  margin: 0 0.5rem 0 0;
   border: none;
 }
 
@@ -567,10 +567,12 @@ input::file-selector-button {
 
 .directory-map {
   position: relative;
+  height: fit-content;
 }
 
 .directory-map img.map {
   max-height: 100vh;
+  display: block;
 }
 
 .directory-map img.pin {
@@ -612,10 +614,9 @@ input::file-selector-button {
 fieldset {
   color: var(--light);
   border-radius: 1rem;
-  padding-top: 1rem;
   max-width: fit-content;
   border: none;
-  padding: 2rem 0;
+  padding: 6rem 0 2rem 0;
 }
 
 fieldset legend {
@@ -635,21 +636,25 @@ button.filter-chip > span {
 
 li {
   list-style: none;
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.3rem;
 }
 
 /* --- CUSTOM LINK STYLING --- */
-#directory-list-items li a:visited,
+.directory-list-items {
+  padding-bottom: 2rem;
+}
+
+.directory-list-items li a:visited,
 a.join:visited {
   color: var(--blue);
 }
 
-#directory-list-items li a:hover,
+.directory-list-items li a:hover,
 a.join:hover {
   color: var(--pink);
 }
 
-#directory-list-items a:active,
+.directory-list-items a:active,
 a.join:active {
   color: var(--blue);
 }
@@ -660,7 +665,7 @@ a.join:active {
 
 /* Media Queries */
 @media screen and (max-width: 1200px) {
-  #directory-list-items {
+  .directory-list-items {
     column-count: 2;
   }
 }
@@ -670,7 +675,7 @@ a.join:active {
     flex-flow: column-reverse;
     justify-content: flex-end;
   }
-  #directory-list-items {
+  .directory-list-items {
     column-count: 1;
   }
 }
@@ -723,7 +728,7 @@ a.join:active {
   position: relative;
 }
 
-.gym-header h1 {
+.gym-header h1.gym-page-title {
   position: absolute;
   bottom: 4rem;
   right: 40%;
@@ -981,7 +986,7 @@ section.the-wall .gym-logo {
 }
 
 @media screen and (max-width: 430px) {
-  .gym-header h1 {
+  .gym-header h1.gym-page-title {
     padding-right: 1.5rem;
   }
   section.the-wall {
