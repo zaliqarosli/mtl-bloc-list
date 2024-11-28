@@ -1,0 +1,30 @@
+{
+  "items": [
+    {
+      "id": "allezup",
+      "name": "Allez Up",
+      "score": 80,
+      "logo": "images/logo/logo-dark-AU.png",
+      "href": "directory/allezup.html"
+    },
+    {
+      "id": "blocshop",
+      "name": "Bloc Shop",
+      "score": 60,
+      "logo": "images/logo/bloc-shop-logo.png",
+      "href": "directory/blocshop.html"
+    },
+    {
+      "score": 10
+    },
+    {
+      "score": 50
+    },
+    {
+      "score": 20
+    },
+    {
+      "score": 40
+    }
+  ]
+}

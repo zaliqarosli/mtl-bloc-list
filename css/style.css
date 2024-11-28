@@ -128,29 +128,40 @@ h1 {
 .answer-graphic {
   display: inline-block;
   margin-top: 5.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+  min-height: 22rem;
 }
 
 .answer-graphic > img {
   max-width: 8rem;
   display: block;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.rotating-group {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  transform-origin: top;
+  position: absolute;
+  top: 2rem;
+  left: 0;
+  right: 0;
+  transition: all 0.2s;
+  transform: rotate(45deg);
 }
 
 .tape-decoration-group {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  transform: rotate(45deg);
-  position: relative;
-  top: -3rem;
-  left: -6rem;
-  z-index: -1;
 }
 
 .tape-decoration {
-  /* height: 180px; */
-  /* width: 15px; */
-  height: 12rem;
+  height: 14rem;
   width: 1rem;
   background-color: var(--dark);
   margin: 0 0.15rem;
@@ -165,12 +176,17 @@ h1 {
   justify-content: center;
   align-items: center;
   /* padding: 0.25rem; */
-  position: relative;
-  left: -11rem;
-  top: -6rem;
+  /* position: relative; */
+  /* left: -11rem; */
+  /* top: -10rem; */
 }
 
-.logo-container a {
+.heart-placeholder {
+  transform: rotate(-45deg);
+}
+
+.logo-container a,
+.logo-container span {
   height: 5.5rem;
   width: 5.5rem;
   display: block;
@@ -184,6 +200,7 @@ h1 {
 .logo-container img {
   /* --- IMPORTANT: setting border-radius makes sure the logo's overfill is clipped --- */
   border-radius: 100%;
+  transition: all 0.2s;
 }
 
 .slider-container {

@@ -1,42 +1,52 @@
 {
   "items": [
     {
+      "id": "allezup",
       "name": "Allez Up",
       "href": "directory/allezup.html"
     },
     {
+      "id": "betabloc",
       "name": "Beta Bloc",
       "href": "directory/betabloc.html"
     },
     {
+      "id": "blocshop",
       "name": "Bloc Shop",
       "href": "directory/blocshop.html"
     },
     {
+      "id": "cafebloc",
       "name": "Café Bloc",
       "href": "directory/cafebloc.html"
     },
     {
+      "id": "lecrux",
       "name": "Le Crux",
       "href": "directory/lecrux.html"
     },
     {
+      "id": "lemouv",
       "name": "Le Mouv’",
       "href": "directory/lemouv.html"
     },
     {
+      "id": "nomad",
       "name": "Nomad Bloc",
       "href": "directory/nomadbloc.html"
     },
     {
+      "id": "offsite",
       "name": "OffSite Climbing",
       "href": "directory/offsiteclimbing.html"
     },
     {
+      "id": "rosebloc",
       "name": "Rose Bloc",
       "href": "directory/rosebloc.html"
     },
     {
+      "id": "shakti",
       "name": "Shakti Rock Gym",
       "href": "directory/shaktirockgym.html"
     }

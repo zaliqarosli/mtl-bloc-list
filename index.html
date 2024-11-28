@@ -33,21 +33,24 @@
           <img
             src="images/pink-small.svg"
             alt="pink climbing hold"
-            class="graphic"
+            class="graphic rotate-in-center"
           />
-          <div class="tape-decoration-group">
-            <div class="tape-decoration"></div>
-            <div class="tape-decoration"></div>
+          <!-- render placeholder here -->
+          <div class="rotating-group">
+            <div class="tape-decoration-group">
+              <div class="tape-decoration"></div>
+              <div class="tape-decoration"></div>
+            </div>
+            <div class="logo-container heart-placeholder">
+              <span>
+                <i
+                  class="fa-solid fa-heart heartbeat"
+                  style="color: var(--red); font-size: 3rem"
+                ></i
+              ></span>
+            </div>
           </div>
-          <div class="logo-container grow-on-hover">
-            <a href="/directory/allezup.html">
-              <img
-                src="images/logo/logo-dark-AU.png"
-                alt="logo of allez up, montreal"
-                class="graphic"
-              />
-            </a>
-          </div>
+          <!-- insert rotating-group with JS -->
         </div>
         <div class="input-container">
           <div class="slider-container">
@@ -60,14 +63,21 @@
               class="slider"
               min="0"
               max="100"
+              value="25"
             />
             <label for="kind-of-climber" class="right-label"
               >comp kid to my core</label
             >
           </div>
           <div class="button-container">
-            <button type="button">not sure</button>
-            <button>feeling lucky</button>
+            <button
+              type="button"
+              class="not-sure"
+              onclick="location.href='/directory.html'"
+            >
+              not sure
+            </button>
+            <button type="button" class="lucky">feeling lucky</button>
           </div>
         </div>
       </div>
@@ -134,5 +144,6 @@
       <p><a href="#">design by zaliqa rosli</a></p>
       <p>zaliqarosli@gmail.com</p>
     </footer>
+    <script src="js/main.js"></script>
   </body>
 </html>
