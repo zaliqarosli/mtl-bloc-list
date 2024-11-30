@@ -43,20 +43,6 @@ const removePlaceholder = (logoContainer) => {
   logoContainer.classList.remove("heart-placeholder");
   logoContainer.classList.add("grow-on-hover");
 
-  // Create new child element
-  // const a = document.createElement("a");
-  // a.href = "#";
-  // a.classList.add("logo-href");
-  // const img = document.createElement("img");
-  // img.classList.add("graphic", "logo-graphic");
-  // a.appendChild(img);
-
-  // Replace placeholder with new child element
-  // while (logoContainer.firstChild) {
-  //   logoContainer.removeChild(logoContainer.firstChild);
-  // }
-  // logoContainer.appendChild(a);
-
   logoContainer.innerHTML = `
       <a href="" class="logo-href">
           <img
@@ -86,6 +72,28 @@ const generateLogo = (score) => {
   logoGraphic.src = item.logo || "";
   logoGraphic.alt = `logo of ${item.name || "climbing gym"}, montreal`;
   logoGraphic.style.transform = `rotate(${logoReset}deg)`;
+
+  // Add page transition effect
+  logoHref.addEventListener("click", (e) => {
+    e.preventDefault();
+    // Set target from global item variable before e.target.href is able to be set
+    const target = item.href ? `/${item.href}` : "#";
+
+    // Remove a tag and pink hold from display
+    logoHref.style.display = "none";
+    setTimeout(() => {
+      document.querySelector(".pink-center-hold").style.display = "none";
+    }, 100);
+
+    // Amend logo container class list
+    logoContainer.classList.remove("grow-on-hover");
+    logoContainer.classList.add("blown");
+
+    // Redirect to target after 400ms delay
+    setTimeout(() => {
+      window.location.href = target;
+    }, 400);
+  });
 };
 
 const randomizeLogo = () => {

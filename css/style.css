@@ -118,6 +118,7 @@ h1 {
   text-align: center;
   position: relative;
   top: -4rem;
+  z-index: 4;
 }
 
 .quiz-container h2 {
@@ -179,6 +180,11 @@ h1 {
   /* position: relative; */
   /* left: -11rem; */
   /* top: -10rem; */
+  transition: 0.4s ease-in;
+}
+
+.logo-container.blown {
+  transform: scale(30);
 }
 
 .heart-placeholder {
@@ -698,12 +704,31 @@ a.join:active {
 }
 
 /* --- ITEM / GYM PAGE --- */
+
+.gym-page-transition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 101;
+  background-color: var(--light);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.1s ease-out;
+}
+
+.gym-page-transition.is-active {
+  pointer-events: all;
+  opacity: 1;
+}
+
 .site-nav {
   position: absolute;
   top: 0;
   right: 0;
   left: 0;
-  z-index: 999;
+  z-index: 98;
 }
 
 .intra-page-nav {
@@ -714,7 +739,7 @@ a.join:active {
   position: sticky;
   float: right;
   top: 20vh;
-  z-index: 1000;
+  z-index: 100;
   padding: 2.5rem 2rem 2.5rem 1.25rem;
   align-items: flex-start;
 }
@@ -759,7 +784,7 @@ a.join:active {
   top: calc(2 * var(--gym-page-pad));
   right: 0rem;
   width: 40%;
-  z-index: 999;
+  z-index: 99;
 }
 
 main.gym-page-main {
