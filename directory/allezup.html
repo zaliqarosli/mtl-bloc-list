@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="../css/fontstyle.css" />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/animation.css" />
+    <!-- <link
+      href="
+https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css
+"
+      rel="stylesheet"
+    /> -->
     <script
       src="https://kit.fontawesome.com/b611ca2cca.js"
       crossorigin="anonymous"
@@ -18,7 +24,7 @@
     <div class="gym-page-transition is-active"></div>
     <!-- Navigation -->
     <div class="gym-page sticky-container">
-      <nav class="intra-page-nav slide-in-top">
+      <nav class="intra-page-nav slide-in-right">
         <a href="#the-story" class="nav-bar-circle grow-on-hover">
           <p class="roc-grotesk-footer nav-inner-circle">story</p>
         </a>
@@ -47,13 +53,19 @@
           ></span>
         </nav>
         <img
-          class="slide-in-left"
+          class="header-img"
           src="../images/allezup-facility-8.jpg"
           alt="bouldering wall at Allez Up gym in Verdun"
         />
-        <h1 class="slide-in-bottom gym-page-title">Allez Up</h1>
+        <div class="title-container">
+          <h1 class="slide-in-bottom gym-page-title">Allez Up</h1>
+          <h1 class="slide-in-bottom gym-page-title">Allez Up</h1>
+          <h1 class="slide-in-bottom gym-page-title">Allez Up</h1>
+          <h1 class="slide-in-bottom gym-page-title">Allez Up</h1>
+        </div>
+        <!-- <h1 class="slide-in-bottom gym-page-title">Allez Up</h1> -->
         <img
-          class="overlay-img slide-in-right"
+          class="overlay-img slide-in-bottom"
           src="../images/AU_overlay_light.png"
           alt="back of person wearing allez up shirt with locations verdun, mile end, psc written"
         />
@@ -112,10 +124,11 @@
               </p>
             </article>
           </div>
-          <img
+          <!-- <img
             src="../images/la-maison-rose.jpg"
             alt="pink house alongside montreal's lachine canal "
-          />
+          /> -->
+          <div class="fixed-image"></div>
         </section>
         <section class="the-wall" id="the-wall">
           <span class="img-container">
@@ -237,6 +250,9 @@
         <p>zaliqarosli@gmail.com</p>
       </div>
     </footer>
+    <!-- <script src="
+https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js
+"></script> -->
     <script src="../js/gympage.js"></script>
   </body>
 </html>

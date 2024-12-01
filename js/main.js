@@ -36,6 +36,36 @@ notSureBtn.addEventListener("click", () => {
   randomizeLogo();
 });
 
+window.onload = () => {
+  // Add directory page transition effect
+  const nav = document.querySelector(".header-nav");
+  const menuTarget = document.querySelector(".menu-target");
+  const spanElement = document.querySelector(".menu-target>span");
+  const menuIcon = document.querySelector(".menu-icon");
+
+  menuTarget.addEventListener("click", (e) => {
+    e.preventDefault();
+    // Set target from menuTarget href because e.target targets img inside anchor element
+    const target = menuTarget.href;
+
+    // Remove menu-icon from display
+    // Change opacity instead to let menu target keep its size
+    // menuIcon.style.display = "none";
+    menuIcon.style.opacity = 0;
+    menuIcon.style.pointerEvents = "none";
+
+    // Amend menu target class list and z-index
+    nav.style.position = "relative";
+    nav.style.zIndex = "5";
+    spanElement.classList.add("blown");
+
+    // Redirect to target after 400ms delay
+    setTimeout(() => {
+      window.location.href = target;
+    }, 400);
+  });
+};
+
 // Helper functions
 
 const removePlaceholder = (logoContainer) => {
@@ -73,21 +103,22 @@ const generateLogo = (score) => {
   logoGraphic.alt = `logo of ${item.name || "climbing gym"}, montreal`;
   logoGraphic.style.transform = `rotate(${logoReset}deg)`;
 
-  // Add page transition effect
+  // Add gym page transition effect
   logoHref.addEventListener("click", (e) => {
     e.preventDefault();
-    // Set target from global item variable before e.target.href is able to be set
-    const target = item.href ? `/${item.href}` : "#";
 
-    // Remove a tag and pink hold from display
-    logoHref.style.display = "none";
+    // Set target from logo href const because e.target targets img inside anchor element
+    const target = logoHref.href;
+
+    // Remove logo image and pink hold from display
+    logoGraphic.style.display = "none";
     setTimeout(() => {
       document.querySelector(".pink-center-hold").style.display = "none";
     }, 100);
 
-    // Amend logo container class list
-    logoContainer.classList.remove("grow-on-hover");
-    logoContainer.classList.add("blown");
+    // Blow up logoHref element
+    logoHref.style.border = "none";
+    logoHref.classList.add("blown");
 
     // Redirect to target after 400ms delay
     setTimeout(() => {
