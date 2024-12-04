@@ -410,7 +410,6 @@ footer {
 footer *,
 footer *::first-letter {
   color: var(--grey);
-  text-transform: lowercase;
 }
 
 .rotate-neg-45 {
@@ -437,7 +436,7 @@ footer *::first-letter {
   color: var(--grey);
   font-size: 1.5rem;
   line-height: 1rem;
-  margin-right: 0.25rem;
+  margin-right: 0.5rem;
 }
 
 form h2 {
@@ -683,6 +682,10 @@ li {
   padding-bottom: 2rem;
 }
 
+a.join:link {
+  color: var(--yellow);
+}
+
 .directory-list-items li a:visited,
 a.join:visited {
   color: var(--blue);
@@ -756,7 +759,7 @@ a.join:active {
   float: right;
   top: 20vh;
   z-index: 100;
-  padding: 2.5rem 2rem 2.5rem 1.25rem;
+  padding: 2.5rem 2rem 2.5rem 1rem;
   align-items: flex-start;
 }
 
@@ -769,12 +772,16 @@ a.join:active {
   margin-bottom: 1rem;
 }
 
+.nav-bar-circle:hover {
+  background-color: var(--green);
+}
+
 .nav-inner-circle {
   border-radius: 100%;
   display: block;
   color: var(--grey);
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 4rem;
+  height: 4rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -890,7 +897,7 @@ section.neighbourhood p {
   /* bottom: -25%; */
   z-index: 999;
   max-width: 30%;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
 }
 
 .the-vibe h3 {
@@ -936,6 +943,8 @@ section.the-wall .gym-logo {
   padding-bottom: 2rem;
 }
 
+/* SOCIAL INITIATIVES SECTION */
+
 .social-initiatives {
   background-color: var(--grey);
   position: relative;
@@ -943,45 +952,124 @@ section.the-wall .gym-logo {
   height: auto;
 }
 
-.social-initiatives img {
+.social-initiatives > img {
   mix-blend-mode: lighten;
 }
 
 .social-initiatives article {
   max-width: 100%;
   padding: var(--gym-page-pad);
+  display: flex;
+  flex-flow: column;
+  align-items: end;
   position: absolute;
-  bottom: 0;
-  right: 0;
-  max-height: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(40%, 1fr));
-  row-gap: 3rem;
-  column-gap: 6rem;
+  top: 64rem;
+}
+
+.social-initiatives article img {
+  border-radius: 0.75rem;
+}
+
+.social-initiatives header {
+  max-width: 52%;
 }
 
 .social-initiatives h1,
+.social-initiatives h3,
+.social-initiatives h4 {
+  padding: 0;
+  padding-bottom: 1rem;
+}
+
 .social-initiatives p {
   padding: 0;
 }
 
-.one {
+.social-initiatives .grid-group {
+  display: grid;
+  /* grid-template-columns: repeat(2, minmax(40%, 1fr)); */
+  grid-template-columns: 1fr 41.5%;
+  column-gap: 3rem;
+  margin-top: 20rem;
+  background-color: var(--grey);
+}
+
+.grid-1 {
+  grid-row: 1 / 2;
   grid-column: 2 / 3;
 }
 
-.three {
-  grid-column: 2 / 3;
-  grid-row: 3 / 4;
+.grid-2 {
+  grid-row: 1 / 4;
+  grid-column: 3 / 5;
 }
 
-.four {
-  grid-column: 1 / 2;
-  grid-row: 4 / 5;
+.grid-3 {
+  grid-row: 3 / 6;
+  grid-column: 1 / 3;
 }
 
-.five {
-  grid-column: 2 / 3;
+.grid-4 {
   grid-row: 5 / 6;
+  grid-column: 3 / 4;
+  /* max-width: 74%; */
+}
+
+.social-initiatives .card-group {
+  /* display: flex;
+  align-items: start; */
+  margin-top: 8rem;
+  position: relative;
+}
+
+.social-initiatives .card-group.card-1 {
+  text-align: right;
+}
+
+.social-initiatives .card-group.card-1 img {
+  width: 80%;
+}
+
+.social-initiatives .card-group .content {
+  position: absolute;
+  top: 3rem;
+}
+
+.social-initiatives .card-group.card-1 .content {
+  width: 41vw;
+  padding: 0 3rem 0 0;
+}
+
+.social-initiatives .card-group.card-2 .img-filter {
+  padding-top: 12rem;
+}
+.social-initiatives .card-group.card-2 .img-filter::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 20rem 10rem 0 rgba(0, 0, 0, 1);
+  width: 90%;
+  border-radius: 0.75rem;
+}
+
+.social-initiatives .card-group.card-2 img {
+  width: 90%;
+}
+
+/* .social-initiatives .card-group.card-2 img::after {
+  box-shadow: inset 0px 200px 100px 0px rgba(0, 0, 0, 1);
+} */
+
+.social-initiatives .card-group.card-2 .content {
+  /* right: 10rem; */
+  width: 90%;
+  padding-left: 41.5vw;
+}
+
+/* FOOTER */
+
+.gym-page-footer {
+  top: 188rem;
 }
 
 .gym-page-footer h2,
@@ -1003,15 +1091,32 @@ section.the-wall .gym-logo {
 
 @media screen and (max-width: 1200px) {
   .social-initiatives article {
-    column-gap: 2rem;
-    row-gap: 0rem;
-    grid-auto-flow: column;
+    top: 48rem;
   }
-
-  .social-initiatives h1 {
-    grid-column: 1 / 2;
-    padding-bottom: var(--gym-page-pad);
+  .social-initiatives .grid-group {
+    column-gap: 2rem;
+    row-gap: 4rem;
+    grid-auto-flow: column;
+    margin-top: calc(2 * var(--gym-page-pad));
+  }
+  .social-initiatives header {
+    max-width: 90%;
+  }
+  .social-initiatives h1,
+  .social-initiatives h4 {
     text-align: left;
+  }
+  .social-initiatives .grid-4 {
+    grid-row: 3 / 5;
+  }
+  .social-initiatives .card-group.card-2 .img-filter {
+    padding-top: 16rem;
+  }
+  .social-initiatives .card-group .content {
+    top: 2rem;
+  }
+  .gym-page-footer {
+    top: 133rem;
   }
 }
 
