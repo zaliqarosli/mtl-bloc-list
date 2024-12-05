@@ -1,12 +1,18 @@
 // Declare global variables
 let items;
-const json = "json/main.json";
+const json = "json/directory.json";
 const logoContainer = document.querySelector(".logo-container");
 
 // Get json data, set global data variable
 fetch(json)
-  .then((response) => response.json())
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error(`Error: ${response.status}`);
+    }
+    return response.json();
+  })
   .then((data) => {
+    console.log(data);
     items = data.items;
   })
   .catch((error) => console.error(error.message));
@@ -134,6 +140,7 @@ const randomizeLogo = () => {
   generateLogo(randomInt);
 };
 
+// Return item with a score that's closest to the input score
 const getClosestItemByScore = (score) => {
   // Find the item that's closest to input score
   const scores = items.map((item) => item.score);

@@ -3,51 +3,78 @@
     {
       "id": "allezup",
       "name": "Allez Up",
+      "score": 80,
+      "logo": "images/logo/logo-dark-AU.png",
       "href": "directory/allezup.html"
     },
     {
       "id": "betabloc",
       "name": "Beta Bloc",
+      "score": 90,
+      "logo": "images/logo/betalogo.jpeg",
       "href": "directory/betabloc.html"
     },
     {
       "id": "blocshop",
       "name": "Bloc Shop",
+      "score": 70,
+      "logo": "images/logo/bloc-shop-logo.png",
       "href": "directory/blocshop.html"
     },
     {
       "id": "cafebloc",
       "name": "Café Bloc",
+      "score": 60,
+      "logo": "images/logo/cafebloclogo.jpg",
       "href": "directory/cafebloc.html"
+    },
+    {
+      "id": "horizonroc",
+      "name": "Horizon Rock Climbing Centre",
+      "score": 10,
+      "logo": "images/logo/horizonroclogo.jpg",
+      "href": "directory/horizonrockclimbing.html"
     },
     {
       "id": "lecrux",
       "name": "Le Crux",
+      "score": 50,
+      "logo": "images/logo/lecruxlogo.jpg",
       "href": "directory/lecrux.html"
     },
     {
       "id": "lemouv",
       "name": "Le Mouv’",
+      "score": 40,
+      "logo": "images/logo/lemouvlogo.jpg",
       "href": "directory/lemouv.html"
     },
     {
       "id": "nomad",
       "name": "Nomad Bloc",
+      "score": 30,
+      "logo": "images/logo/nomad_logo.jpg",
       "href": "directory/nomadbloc.html"
     },
     {
       "id": "offsite",
       "name": "OffSite Climbing",
+      "score": 20,
+      "logo": "images/logo/offsite_logo.jpg",
       "href": "directory/offsiteclimbing.html"
     },
     {
       "id": "rosebloc",
       "name": "Rose Bloc",
+      "score": 100,
+      "logo": "images/logo/rosebloclogo.jpg",
       "href": "directory/rosebloc.html"
     },
     {
       "id": "shakti",
       "name": "Shakti Rock Gym",
+      "score": 0,
+      "logo": "images/logo/shakti_logo.jpg",
       "href": "directory/shaktirockgym.html"
     }
   ]
