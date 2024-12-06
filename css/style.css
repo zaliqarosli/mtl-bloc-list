@@ -619,17 +619,20 @@ input::file-selector-button {
   z-index: 5;
   display: inline-block;
   transition: all 0.2s;
+  transform-origin: bottom;
 }
 
 .directory-map .map-logos img.logo {
   width: 12%;
   position: absolute;
   z-index: 999;
-  background-color: var(--light);
+  /* background-color: var(--light); */
+  background: white;
   border-radius: 0.75rem;
   padding: 0.5rem;
   display: inline-block;
-  transition: all 0.2s;
+  transition: all 0.2s ease-in;
+  opacity: 0;
 }
 
 .directory-map img.pin:hover,
@@ -678,9 +681,9 @@ li {
 }
 
 /* --- CUSTOM LINK STYLING --- */
-.directory-list-items {
+/* .directory-list-items {
   padding-bottom: 2rem;
-}
+} */
 
 a.join:link {
   color: var(--yellow);

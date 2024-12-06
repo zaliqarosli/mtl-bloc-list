@@ -4,78 +4,218 @@
       "id": "allezup",
       "name": "Allez Up",
       "score": 80,
-      "logo": "images/logo/logo-dark-AU.png",
-      "href": "directory/allezup.html"
+      "logo": {
+        "src": "images/logo/logo-dark-AU.png",
+        "coord": "top: 54%; left: 54%"
+      },
+      "href": "directory/allezup.html",
+      "mapPins": [
+        {
+          "id": "allezup-pin-mile",
+          "alt": "location pin of allez up mile end",
+          "coord": "top: 46%; left: 62.6%"
+        },
+        {
+          "id": "allezup-pin-psc",
+          "alt": "location pin of allez up PSC",
+          "coord": "top: 56.5%; left: 71%; z-index: 999"
+        },
+        {
+          "id": "allezup-pin-ver",
+          "alt": "location pin of allez up verdun",
+          "coord": "top: 63%; left: 71%"
+        }
+      ]
     },
     {
       "id": "betabloc",
       "name": "Beta Bloc",
       "score": 90,
-      "logo": "images/logo/betalogo.jpeg",
-      "href": "directory/betabloc.html"
+      "logo": {
+        "src": "images/logo/betalogo.jpeg",
+        "coord": "top: 55%; left: 30%"
+      },
+      "href": "directory/betabloc.html",
+      "mapPins": [
+        {
+          "id": "betablock-pin",
+          "alt": "location pin of beta bloc gym",
+          "coord": "top: 59%; left: 21%"
+        }
+      ]
     },
     {
       "id": "blocshop",
       "name": "Bloc Shop",
       "score": 70,
-      "logo": "images/logo/bloc-shop-logo.png",
-      "href": "directory/blocshop.html"
+      "logo": {
+        "src": "images/logo/bloc-shop-logo.png",
+        "coord": "top: 32%; left: 48%"
+      },
+      "href": "directory/blocshop.html",
+      "mapPins": [
+        {
+          "id": "blocshop-pin-mile",
+          "alt": "location pin of bloc shop mile end",
+          "coord": "top: 45%; left: 60%"
+        },
+        {
+          "id": "blocshop-pin-chab",
+          "alt": "location pin of bloc shop chabanel",
+          "coord": "top: 45%; left: 49%"
+        },
+        {
+          "id": "blocshop-pin-hoch",
+          "alt": "location pin of bloc shop hochelaga",
+          "coord": "top: 43%; left: 75%"
+        }
+      ]
     },
     {
       "id": "cafebloc",
       "name": "Café Bloc",
       "score": 60,
-      "logo": "images/logo/cafebloclogo.jpg",
-      "href": "directory/cafebloc.html"
+      "logo": {
+        "src": "images/logo/cafebloclogo.jpg",
+        "coord": "top: 55%; left: 55%"
+      },
+      "href": "directory/cafebloc.html",
+      "mapPins": [
+        {
+          "id": "cafebloc-pin",
+          "alt": "location pin of cafe bloc",
+          "coord": "top: 52%; left: 70%"
+        }
+      ]
     },
     {
       "id": "horizonroc",
       "name": "Horizon Rock Climbing Centre",
       "score": 10,
-      "logo": "images/logo/horizonroclogo.jpg",
-      "href": "directory/horizonrockclimbing.html"
+      "logo": {
+        "src": "images/logo/horizonroclogo.jpg",
+        "coord": "top: 20%; left: 70%"
+      },
+      "href": "directory/horizonrockclimbing.html",
+      "mapPins": [
+        {
+          "id": "horizonroc-pin",
+          "alt": "location pin of horizon roc",
+          "coord": "top: 34%; left: 76.5%;"
+        }
+      ]
     },
     {
       "id": "lecrux",
       "name": "Le Crux",
       "score": 50,
-      "logo": "images/logo/lecruxlogo.jpg",
-      "href": "directory/lecrux.html"
+      "logo": {
+        "src": "images/logo/lecruxlogo.jpg",
+        "coord": "top: 20%; left: 25%"
+      },
+      "href": "directory/lecrux.html",
+      "mapPins": [
+        {
+          "id": "lecrux-pin-lav",
+          "alt": "location pin of le crux laval",
+          "coord": "top: 35%; left: 34%"
+        },
+        {
+          "id": "lecrux-pin-bois",
+          "alt": "location pin of le crux boisbriand",
+          "coord": "top: 19%; left: 12%"
+        }
+      ]
     },
     {
       "id": "lemouv",
       "name": "Le Mouv’",
       "score": 40,
-      "logo": "images/logo/lemouvlogo.jpg",
-      "href": "directory/lemouv.html"
+      "logo": {
+        "src": "images/logo/lemouvlogo.jpg",
+        "coord": "top: 22%; left: 60%"
+      },
+      "href": "directory/lemouv.html",
+      "mapPins": [
+        {
+          "id": "lemouv-pin",
+          "alt": "location pin of le mouv",
+          "coord": "top: 35%; left: 64%"
+        }
+      ]
     },
     {
       "id": "nomad",
       "name": "Nomad Bloc",
       "score": 30,
-      "logo": "images/logo/nomad_logo.jpg",
-      "href": "directory/nomadbloc.html"
+      "logo": {
+        "src": "images/logo/nomad_logo.jpg",
+        "coord": "top: 24%; left: 65%"
+      },
+      "href": "directory/nomadbloc.html",
+      "mapPins": [
+        {
+          "id": "nomadbloc-pin",
+          "alt": "location pin of nomad bloc",
+          "coord": "top: 38%; left: 72%"
+        }
+      ]
     },
     {
       "id": "offsite",
       "name": "OffSite Climbing",
       "score": 20,
-      "logo": "images/logo/offsite_logo.jpg",
-      "href": "directory/offsiteclimbing.html"
+      "logo": {
+        "src": "images/logo/offsite_logo.jpg",
+        "coord": "top: 24%; left: 80%"
+      },
+      "href": "directory/offsiteclimbing.html",
+      "mapPins": [
+        {
+          "id": "offsite-pin",
+          "alt": "location pin of offsite climbing",
+          "coord": "top: 35.5%; left: 76%"
+        }
+      ]
     },
     {
       "id": "rosebloc",
       "name": "Rose Bloc",
       "score": 100,
-      "logo": "images/logo/rosebloclogo.jpg",
-      "href": "directory/rosebloc.html"
+      "logo": {
+        "src": "images/logo/rosebloclogo.jpg",
+        "coord": "top: 45%; left: 85%"
+      },
+      "href": "directory/rosebloc.html",
+      "mapPins": [
+        {
+          "id": "rosebloc-pin-long",
+          "alt": "location pin of rose bloc longueuil",
+          "coord": "top: 38%; left: 86%"
+        },
+        {
+          "id": "rosebloc-pin-bros",
+          "alt": "location pin of rose bloc brossard",
+          "coord": "top: 57%; left: 93%"
+        }
+      ]
     },
     {
       "id": "shakti",
       "name": "Shakti Rock Gym",
       "score": 0,
-      "logo": "images/logo/shakti_logo.jpg",
-      "href": "directory/shaktirockgym.html"
+      "logo": {
+        "src": "images/logo/shakti_logo.jpg",
+        "coord": "top: 33%; left: 50%"
+      },
+      "href": "directory/shaktirockgym.html",
+      "mapPins": [
+        {
+          "id": "shakti-pin",
+          "alt": "location pin of shakti rock gym",
+          "coord": "top: 46%; left: 63%"
+        }
+      ]
     }
   ]
 }
