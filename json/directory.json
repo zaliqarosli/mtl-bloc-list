@@ -25,7 +25,12 @@
           "alt": "location pin of allez up verdun",
           "coord": "top: 63%; left: 71%"
         }
-      ]
+      ],
+      "filter": {
+        "beginner": true,
+        "new-school": true,
+        "old-school": false
+      }
     },
     {
       "id": "betabloc",
@@ -42,7 +47,12 @@
           "alt": "location pin of beta bloc gym",
           "coord": "top: 59%; left: 21%"
         }
-      ]
+      ],
+      "filter": {
+        "beginner": true,
+        "new-school": true,
+        "old-school": false
+      }
     },
     {
       "id": "blocshop",
@@ -69,7 +79,12 @@
           "alt": "location pin of bloc shop hochelaga",
           "coord": "top: 43%; left: 75%"
         }
-      ]
+      ],
+      "filter": {
+        "beginner": true,
+        "new-school": true,
+        "old-school": false
+      }
     },
     {
       "id": "cafebloc",
@@ -86,7 +101,12 @@
           "alt": "location pin of cafe bloc",
           "coord": "top: 52%; left: 70%"
         }
-      ]
+      ],
+      "filter": {
+        "beginner": false,
+        "new-school": true,
+        "old-school": false
+      }
     },
     {
       "id": "horizonroc",
@@ -103,7 +123,12 @@
           "alt": "location pin of horizon roc",
           "coord": "top: 34%; left: 76.5%;"
         }
-      ]
+      ],
+      "filter": {
+        "beginner": true,
+        "new-school": false,
+        "old-school": true
+      }
     },
     {
       "id": "lecrux",
@@ -125,7 +150,12 @@
           "alt": "location pin of le crux boisbriand",
           "coord": "top: 19%; left: 12%"
         }
-      ]
+      ],
+      "filter": {
+        "beginner": true,
+        "new-school": true,
+        "old-school": false
+      }
     },
     {
       "id": "lemouv",
@@ -142,7 +172,12 @@
           "alt": "location pin of le mouv",
           "coord": "top: 35%; left: 64%"
         }
-      ]
+      ],
+      "filter": {
+        "beginner": true,
+        "new-school": true,
+        "old-school": false
+      }
     },
     {
       "id": "nomad",
@@ -159,7 +194,12 @@
           "alt": "location pin of nomad bloc",
           "coord": "top: 38%; left: 72%"
         }
-      ]
+      ],
+      "filter": {
+        "beginner": false,
+        "new-school": true,
+        "old-school": false
+      }
     },
     {
       "id": "offsite",
@@ -176,7 +216,12 @@
           "alt": "location pin of offsite climbing",
           "coord": "top: 35.5%; left: 76%"
         }
-      ]
+      ],
+      "filter": {
+        "beginner": false,
+        "new-school": false,
+        "old-school": true
+      }
     },
     {
       "id": "rosebloc",
@@ -198,7 +243,12 @@
           "alt": "location pin of rose bloc brossard",
           "coord": "top: 57%; left: 93%"
         }
-      ]
+      ],
+      "filter": {
+        "beginner": true,
+        "new-school": true,
+        "old-school": false
+      }
     },
     {
       "id": "shakti",
@@ -215,7 +265,12 @@
           "alt": "location pin of shakti rock gym",
           "coord": "top: 46%; left: 63%"
         }
-      ]
+      ],
+      "filter": {
+        "beginner": false,
+        "new-school": false,
+        "old-school": true
+      }
     }
   ]
 }

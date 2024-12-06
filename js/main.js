@@ -105,7 +105,7 @@ const generateLogo = (score) => {
   // Change logo data and rotation
   rotatingGroup.style.transform = `rotate(${rotateBy}deg)`;
   logoHref.href = item.href ? `/${item.href}` : "#";
-  logoGraphic.src = item.logo || "";
+  logoGraphic.src = item.logo.src || "";
   logoGraphic.alt = `logo of ${item.name || "climbing gym"}, montreal`;
   logoGraphic.style.transform = `rotate(${logoReset}deg)`;
 

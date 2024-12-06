@@ -1,3 +1,22 @@
+// Parse out URL if query parameters present for filtering
+const filters = [
+  { id: "beginner", name: "Beginner" },
+  { id: "new-school", name: "New-school" },
+  { id: "old-school", name: "Old-school" },
+];
+const enabledChip = [];
+const params = new URLSearchParams(document.location.search);
+filters.forEach((filter) => {
+  const chip = document.querySelector(`#${filter.id}`);
+  const param = params.get(filter.id) ?? false;
+  if (param) {
+    chip.classList.add("is-enabled");
+    chip.innerHTML += ` <span>X</span>`;
+    enabledChip.push(filter.id);
+  }
+});
+
+// Fetch data and generate dynamic content
 const json = "json/directory.json";
 fetch(json)
   .then((response) => {
@@ -23,8 +42,16 @@ fetch(json)
       const liText = li.firstChild;
       listFragment.appendChild(li);
 
+      // Disable list text if filtering is enabled
+      const filter = item.filter;
+      enabledChip.forEach((chip) => {
+        if (filter[chip] == false) {
+          liText.classList.add("disabled");
+        }
+      });
+
       // Create map pins and logos
-      const logo = createLogo(item.logo, item.name, item.href);
+      const logo = createLogo(item.id, item.logo, item.name, item.href);
       const pins = createMapPins(item.mapPins, item.href);
 
       // Append pins to fragment and add event listeners
@@ -33,35 +60,34 @@ fetch(json)
         // Add hover over actions
         pin.addEventListener("mouseover", function () {
           map.appendChild(logo);
-          // Set opacity 1 after timeout to allow transition to display
-          setTimeout(() => (logo.firstChild.style.opacity = "1"), 1);
+          // Remove hidden after timeout to allow transition to display
+          setTimeout(() => logo.firstChild.classList.remove("hidden"), 1);
           // Highlist list item text
-          liText.style.color = "var(--pink)";
+          liText.classList.add("highlight");
         });
         pin.addEventListener("mouseout", () => {
-          // Transition logo display out first
-          logo.firstChild.style.opacity = "0";
-          setTimeout(() => map.removeChild(logo), 400);
-          liText.style.color = "";
+          // Hide logo, unhighlight list item text
+          logo.firstChild.classList.add("hidden");
+          liText.classList.remove("highlight");
         });
       });
 
       // Pop up respective logo, enlarge pins when hovering over list item
       liText.addEventListener("mouseover", () => {
         map.appendChild(logo);
-        // Set opacity 1 after timeout to allow transition to display
-        setTimeout(() => (logo.firstChild.style.opacity = "1"), 1);
+        // Remove hidden after timeout to allow transition to display
+        setTimeout(() => logo.firstChild.classList.remove("hidden"), 1);
+        // Bob pin
         pins.forEach((pin) => {
-          pin.classList.add("heartbeat");
+          pin.firstChild.classList.add("heartbeat");
         });
       });
       // Remove logo, shrink pins when mouse leaves list item
       liText.addEventListener("mouseout", () => {
-        // Transition logo display out first
-        logo.firstChild.style.opacity = "0";
-        setTimeout(() => map.removeChild(logo), 400);
+        // Hide logo, bob pin
+        logo.firstChild.classList.add("hidden");
         pins.forEach((pin) => {
-          pin.classList.remove("heartbeat");
+          pin.firstChild.classList.remove("heartbeat");
         });
       });
     });
@@ -71,6 +97,23 @@ fetch(json)
     pinsContainer.appendChild(pinsFragment);
   })
   .catch((error) => console.error(error.message));
+
+// Add event listeners to filter chip button
+const chips = document.querySelectorAll(".filter-chip");
+chips.forEach((chip) => {
+  const filterId = chip.id;
+  const filterName = filters.find((filter) => filter.id === filterId).name;
+  chip.addEventListener("click", function () {
+    this.classList.toggle("is-enabled");
+    if (this.classList.contains("is-enabled")) {
+      this.innerHTML = `${filterName} <span>X</span>`;
+      enabledChip.push(filterId);
+    } else {
+      this.innerHTML = filterName;
+      enabledChip.splice(enabledChip.indexOf(filterId), 1);
+    }
+  });
+});
 
 // HELPER FUNCTIONS
 const createListItem = (name, href) => {
@@ -88,21 +131,25 @@ const createMapPins = (pins, href) => {
     const img = document.createElement("img");
     a.href = href || "#";
     img.id = pin.id;
+    img.loading = "lazy";
     img.classList.add("pin");
     img.src = "images/pin_alt.svg";
     img.alt = pin.alt || "";
     img.style = pin.coord;
-    return a.appendChild(img);
+    a.appendChild(img);
+    return a;
   });
 };
 
-const createLogo = (logoObj, name, href) => {
+const createLogo = (id, logoObj, name, href) => {
   const img = document.createElement("img");
-  img.classList.add("logo");
+  img.loading = "lazy";
+  img.classList.add("logo", "hidden");
   img.src = logoObj.src || "";
   img.alt = `logo of ${name || "climbing gym"}`;
   img.style = logoObj.coord || "top: 20%; left: 48%";
   const a = document.createElement("a");
+  a.id = `${id}-logo`;
   a.href = href || "#";
   a.appendChild(img);
   return a;
