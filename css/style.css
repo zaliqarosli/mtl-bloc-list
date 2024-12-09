@@ -57,7 +57,8 @@ a:active {
   color: unset;
 }
 
-a.disabled {
+a.disabled:link,
+a.disabled:visited {
   color: var(--grey);
   pointer-events: none;
 }
@@ -717,6 +718,14 @@ a.join:link {
 .directory-list-items li a:visited,
 a.join:visited {
   color: var(--blue);
+}
+
+.directory-list-items li a.disabled:visited {
+  color: var(--grey);
+}
+
+.directory-list-items li a.highlight:visited {
+  color: var(--pink);
 }
 
 .directory-list-items li a:hover,

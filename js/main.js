@@ -12,7 +12,6 @@ fetch(json)
     return response.json();
   })
   .then((data) => {
-    console.log(data);
     items = data.items;
   })
   .catch((error) => console.error(error.message));

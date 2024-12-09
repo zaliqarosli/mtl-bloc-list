@@ -15,6 +15,12 @@ filters.forEach((filter) => {
     enabledChip.push(filter.id);
   }
 });
+let itemFilters = {};
+
+// Select elements
+const list = document.querySelector(".directory-list-items");
+const map = document.querySelector(".map-logos");
+const pinsContainer = document.querySelector(".map-pins");
 
 // Fetch data and generate dynamic content
 const json = "json/directory.json";
@@ -26,33 +32,23 @@ fetch(json)
     return response.json();
   })
   .then((data) => {
-    // Select elements
-    const list = document.querySelector(".directory-list-items");
-    const map = document.querySelector(".map-logos");
-    const pinsContainer = document.querySelector(".map-pins");
-
     // Create document fragment to append to document
     const pinsFragment = document.createDocumentFragment();
     const listFragment = document.createDocumentFragment();
 
     // Create data list items, logos, and map pins
     data.items.forEach((item) => {
+      // Save filters to global variable
+      itemFilters[item.id] = item.filter;
+
       // Create list items
-      const li = createListItem(item.name, item.href);
+      const li = createListItem(item.id, item.name, item.href);
       const liText = li.firstChild;
       listFragment.appendChild(li);
 
-      // Disable list text if filtering is enabled
-      const filter = item.filter;
-      enabledChip.forEach((chip) => {
-        if (filter[chip] == false) {
-          liText.classList.add("disabled");
-        }
-      });
-
       // Create map pins and logos
       const logo = createLogo(item.id, item.logo, item.name, item.href);
-      const pins = createMapPins(item.mapPins, item.href);
+      const pins = createMapPins(item.id, item.mapPins, item.href);
 
       // Append pins to fragment and add event listeners
       pins.forEach((pin) => {
@@ -95,6 +91,9 @@ fetch(json)
     // Append fragments to DOM
     list.appendChild(listFragment);
     pinsContainer.appendChild(pinsFragment);
+
+    // Filter list and icons according to array of filters enabled
+    filterList(enabledChip);
   })
   .catch((error) => console.error(error.message));
 
@@ -112,24 +111,56 @@ chips.forEach((chip) => {
       this.innerHTML = filterName;
       enabledChip.splice(enabledChip.indexOf(filterId), 1);
     }
+    filterList(enabledChip);
   });
 });
 
 // HELPER FUNCTIONS
-const createListItem = (name, href) => {
+
+// Filter list and icons according to array of filters
+const filterList = (filters) => {
+  const li = list.querySelectorAll("li");
+  li.forEach((item) => {
+    const a = item.querySelector("a");
+    const identifier = a.id;
+    const pins = pinsContainer.querySelectorAll(`.${identifier}`);
+
+    // If filters is an empty array, remove disabled class from all items
+    if (enabledChip.length === 0) {
+      a.classList.remove("disabled");
+      pins.forEach((pin) => (pin.style.display = "revert"));
+      return;
+    }
+
+    // Add disabled class if item filter value is false for all filter ids
+    const filterIsTrue = (filter) => itemFilters[identifier][filter];
+    const show = filters.some(filterIsTrue);
+    if (!show) {
+      a.classList.add("disabled");
+      pins.forEach((pin) => (pin.style.display = "none"));
+    } else {
+      a.classList.remove("disabled");
+      pins.forEach((pin) => (pin.style.display = "revert"));
+    }
+  });
+};
+
+const createListItem = (id, name, href) => {
   const a = document.createElement("a");
   const li = document.createElement("li");
   a.href = href;
   a.textContent = name;
+  a.id = id;
   li.appendChild(a);
   return li;
 };
 
-const createMapPins = (pins, href) => {
+const createMapPins = (id, pins, href) => {
   return pins.map((pin) => {
     const a = document.createElement("a");
     const img = document.createElement("img");
     a.href = href || "#";
+    a.classList.add(id);
     img.id = pin.id;
     img.loading = "lazy";
     img.classList.add("pin");
