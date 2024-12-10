@@ -4,6 +4,17 @@ const filters = [
   { id: "new-school", name: "New-school" },
   { id: "old-school", name: "Old-school" },
 ];
+
+// Create filter chips
+const fieldset = document.querySelector("fieldset.filter");
+filters.forEach((filter) => {
+  const button = document.createElement("button");
+  button.id = filter.id;
+  button.classList.add("filter-chip", "roc-grotesk-footer");
+  button.innerHTML = filter.name;
+  fieldset.append(button);
+});
+
 const enabledChip = [];
 const params = new URLSearchParams(document.location.search);
 filters.forEach((filter) => {
@@ -23,7 +34,8 @@ const map = document.querySelector(".map-logos");
 const pinsContainer = document.querySelector(".map-pins");
 
 // Fetch data and generate dynamic content
-const json = "json/directory.json";
+// json variable already initialized in main.js
+// const json = "json/directory.json";
 fetch(json)
   .then((response) => {
     if (!response.ok) {
@@ -44,7 +56,7 @@ fetch(json)
       // Create list items
       const li = createListItem(item.id, item.name, item.href);
       const liText = li.firstChild;
-      listFragment.appendChild(li);
+      listFragment.append(li);
 
       // Create map pins and logos
       const logo = createLogo(item.id, item.logo, item.name, item.href);
@@ -52,10 +64,10 @@ fetch(json)
 
       // Append pins to fragment and add event listeners
       pins.forEach((pin) => {
-        pinsFragment.appendChild(pin);
+        pinsFragment.append(pin);
         // Add hover over actions
         pin.addEventListener("mouseover", function () {
-          map.appendChild(logo);
+          map.append(logo);
           // Remove hidden after timeout to allow transition to display
           setTimeout(() => logo.firstChild.classList.remove("hidden"), 1);
           // Highlist list item text
@@ -70,7 +82,7 @@ fetch(json)
 
       // Pop up respective logo, enlarge pins when hovering over list item
       liText.addEventListener("mouseover", () => {
-        map.appendChild(logo);
+        map.append(logo);
         // Remove hidden after timeout to allow transition to display
         setTimeout(() => logo.firstChild.classList.remove("hidden"), 1);
         // Bob pin
@@ -89,8 +101,8 @@ fetch(json)
     });
 
     // Append fragments to DOM
-    list.appendChild(listFragment);
-    pinsContainer.appendChild(pinsFragment);
+    list.append(listFragment);
+    pinsContainer.append(pinsFragment);
 
     // Filter list and icons according to array of filters enabled
     filterList(enabledChip);
@@ -151,7 +163,7 @@ const createListItem = (id, name, href) => {
   a.href = href;
   a.textContent = name;
   a.id = id;
-  li.appendChild(a);
+  li.append(a);
   return li;
 };
 
@@ -167,7 +179,7 @@ const createMapPins = (id, pins, href) => {
     img.src = "images/pin_alt.svg";
     img.alt = pin.alt || "";
     img.style = pin.coord;
-    a.appendChild(img);
+    a.append(img);
     return a;
   });
 };
@@ -182,6 +194,6 @@ const createLogo = (id, logoObj, name, href) => {
   const a = document.createElement("a");
   a.id = `${id}-logo`;
   a.href = href || "#";
-  a.appendChild(img);
+  a.append(img);
   return a;
 };

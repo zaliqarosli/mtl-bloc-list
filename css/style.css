@@ -36,6 +36,15 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+}
+
+nav.fixed {
+  position: fixed;
 }
 
 /* --- DEFAULT LINK STYLING --- */
@@ -78,19 +87,31 @@ a.highlight {
   flex-basis: min-content;
 }
 
-a.menu-target {
+span.menu-target {
   background-color: var(--dark);
   padding: 2rem 2rem 4rem 5rem;
   max-width: 14rem;
   border-bottom-left-radius: 100%;
   transform-origin: 11rem 2rem;
   display: inline-block;
+  pointer-events: all;
+  cursor: pointer;
 }
 
-a.menu-target.blown {
-  transform: scale(15);
+span.menu-target.blown {
+  transform: scale(14);
   pointer-events: none;
   transition: transform 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.menu-icon {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.menu-icon.hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .grow-on-hover {
@@ -343,6 +364,10 @@ main {
   overflow-x: clip;
 }
 
+main.hidden {
+  display: none;
+}
+
 main h2 {
   padding-bottom: 4rem;
 }
@@ -397,6 +422,10 @@ footer {
   position: relative;
   z-index: 3;
   overflow-x: clip;
+}
+
+footer.hidden {
+  display: none;
 }
 
 .nav-footer {
@@ -603,10 +632,19 @@ input::file-selector-button {
 /* --- DIRECTORY PAGE --- */
 
 .directory-page {
-  display: flex;
+  display: none;
   background-color: var(--dark);
   justify-content: space-evenly;
   color: var(--light);
+  position: absolute;
+  z-index: 6;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.directory-page.is-active {
+  display: flex;
 }
 
 .directory-map {
@@ -661,6 +699,11 @@ input::file-selector-button {
 
 .directory-content > nav > * {
   max-width: 12rem;
+}
+
+.close-icon {
+  pointer-events: all;
+  cursor: pointer;
 }
 
 fieldset {
