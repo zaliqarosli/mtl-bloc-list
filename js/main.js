@@ -61,6 +61,8 @@ closeIcon.addEventListener("click", closeModal);
 
 // LANDING PAGE HELPER FUNCTIONS
 function openModal() {
+  // Bring nav to the highest z-index
+  nav.classList.toggle("front");
   // Trigger modal transition
   openIcon.classList.toggle("blown");
   // Remove menu-icon from display
@@ -90,6 +92,8 @@ function closeModal() {
   setTimeout(() => {
     // Return menu-icon to display after modal transition completes
     menuIcon.classList.toggle("hidden");
+    // Remove nav z-index
+    nav.classList.toggle("front");
   }, 200);
 }
 
