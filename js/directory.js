@@ -1,34 +1,5 @@
-// Parse out URL if query parameters present for filtering
-const filters = [
-  { id: "beginner", name: "Beginner" },
-  { id: "new-school", name: "New-school" },
-  { id: "old-school", name: "Old-school" },
-];
-
-// Create filter chips
-const fieldset = document.querySelector("fieldset.filter");
-filters.forEach((filter) => {
-  const button = document.createElement("button");
-  button.id = filter.id;
-  button.classList.add("filter-chip", "roc-grotesk-footer");
-  button.innerHTML = filter.name;
-  fieldset.append(button);
-});
-
-const enabledChip = [];
-const params = new URLSearchParams(document.location.search);
-filters.forEach((filter) => {
-  const chip = document.querySelector(`#${filter.id}`);
-  const param = params.get(filter.id) ?? false;
-  if (param) {
-    chip.classList.add("is-enabled");
-    chip.innerHTML += ` <span>X</span>`;
-    enabledChip.push(filter.id);
-  }
-});
-let itemFilters = {};
-
 // Select elements
+const directoryPage = document.querySelector(".directory-page");
 const list = document.querySelector(".directory-list-items");
 const map = document.querySelector(".map-logos");
 const pinsContainer = document.querySelector(".map-pins");
@@ -36,6 +7,7 @@ const pinsContainer = document.querySelector(".map-pins");
 // Fetch data and generate dynamic content
 // json variable already initialized in main.js
 // const json = "json/directory.json";
+let itemFilters = {};
 fetch(json)
   .then((response) => {
     if (!response.ok) {
@@ -103,34 +75,93 @@ fetch(json)
     // Append fragments to DOM
     list.append(listFragment);
     pinsContainer.append(pinsFragment);
-
-    // Filter list and icons according to array of filters enabled
-    filterList(enabledChip);
   })
   .catch((error) => console.error(error.message));
 
-// Add event listeners to filter chip button
-const chips = document.querySelectorAll(".filter-chip");
-chips.forEach((chip) => {
-  const filterId = chip.id;
-  const filterName = filters.find((filter) => filter.id === filterId).name;
-  chip.addEventListener("click", function () {
-    this.classList.toggle("is-enabled");
-    if (this.classList.contains("is-enabled")) {
-      this.innerHTML = `${filterName} <span>X</span>`;
-      enabledChip.push(filterId);
-    } else {
-      this.innerHTML = filterName;
-      enabledChip.splice(enabledChip.indexOf(filterId), 1);
-    }
-    filterList(enabledChip);
+// Set up filtering and filter chips
+const enabledChip = [];
+const filters = [
+  { id: "beginner", name: "Beginner" },
+  { id: "new-school", name: "New-school" },
+  { id: "old-school", name: "Old-school" },
+];
+
+// Create filter chips
+const fieldset = document.querySelector("fieldset.filter");
+filters.forEach((filter) => {
+  const filterId = filter.id;
+  const filterName = filter.name;
+  // Create filter chip button
+  const button = document.createElement("button");
+  button.id = filterId;
+  button.classList.add("filter-chip", "roc-grotesk-footer");
+  button.innerHTML = filterName;
+  // Add event listener to button
+  button.addEventListener("click", function () {
+    toggleFiltering(this, filterName);
   });
+  // Add chip to fieldset
+  fieldset.append(button);
 });
+
+// Parse out URL if query parameters present for filtering
+// when directory page is visible
+const observer = new IntersectionObserver(
+  () => {
+    const params = new URLSearchParams(document.location.search);
+    filters.forEach((filter) => {
+      const filterId = filter.id;
+      const filterName = filter.name;
+      const chip = document.querySelector(`#${filterId}`);
+      const param = params.get(filterId) ?? false;
+      if (param) {
+        chip.classList.add("is-enabled");
+        chip.innerHTML = `${filterName} <span>X</span>`;
+        enabledChip.push(filterId);
+      } else {
+        chip.classList.remove("is-enabled");
+        chip.innerHTML = filterName;
+        const chipIndex = enabledChip.indexOf(filterId);
+        if (chipIndex > -1) {
+          enabledChip.splice(chipIndex, 1);
+        }
+      }
+    });
+    // Filter list and icons according to array of filters enabled
+    filterList(enabledChip);
+  },
+  { root: null }
+);
+observer.observe(directoryPage);
 
 // HELPER FUNCTIONS
 
+function toggleFiltering(chip, filterName) {
+  // Toggle classname
+  chip.classList.toggle("is-enabled");
+
+  // Enable or disable filtering
+  let url;
+  if (chip.classList.contains("is-enabled")) {
+    chip.innerHTML = `${filterName} <span>X</span>`;
+    enabledChip.push(chip.id);
+    // Append filter query parameter to url
+    url = new URL(location);
+    url.searchParams.set(chip.id, true);
+  } else {
+    chip.innerHTML = filterName;
+    enabledChip.splice(enabledChip.indexOf(chip.id), 1);
+    // Remove filter query parameter from url
+    url = new URL(location);
+    url.searchParams.delete(chip.id, true);
+  }
+
+  history.pushState({}, "", url);
+  filterList(enabledChip);
+}
+
 // Filter list and icons according to array of filters
-const filterList = (filters) => {
+function filterList(filters) {
   const li = list.querySelectorAll("li");
   li.forEach((item) => {
     const a = item.querySelector("a");
@@ -155,7 +186,7 @@ const filterList = (filters) => {
       pins.forEach((pin) => (pin.style.display = "revert"));
     }
   });
-};
+}
 
 const createListItem = (id, name, href) => {
   const a = document.createElement("a");

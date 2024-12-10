@@ -30,6 +30,18 @@ slider.addEventListener("input", () => {
 });
 
 // Add event listener to 'Not sure' button
+const notSure = document.querySelector(".not-sure");
+notSure.addEventListener("click", () => {
+  // Append beginner query parameter to url
+  const url = new URL(location);
+  url.searchParams.set("beginner", true);
+  history.pushState({}, "", url);
+  // Open modal
+  openModal();
+  setTimeout(() => {
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+  }, 400);
+});
 
 // Add event listener to 'Feeling lucky' button
 const lucky = document.querySelector(".lucky");
@@ -98,6 +110,9 @@ function closeModal() {
   modal.classList.toggle("is-active");
   // Trigger modal transition
   openIcon.classList.toggle("blown");
+  // Remove any query params from URL
+  const url = new URL(location);
+  history.pushState({}, "", url.pathname);
   setTimeout(() => {
     // Return menu-icon to display after modal transition completes
     menuIcon.classList.toggle("hidden");
