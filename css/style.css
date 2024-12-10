@@ -386,20 +386,17 @@ article {
   max-width: 60vw;
 }
 
-#call-to-action:link {
+#call-to-action {
   text-align: right;
   display: flex;
   justify-content: flex-end;
   color: var(--light);
   transition: all 0.2s;
+  cursor: pointer;
 }
 
 #call-to-action h3 {
   color: inherit;
-}
-
-#call-to-action:visited {
-  color: var(--blue);
 }
 
 #call-to-action:hover {

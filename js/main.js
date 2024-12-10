@@ -59,6 +59,15 @@ const modal = document.querySelector(".directory-page");
 openIcon.addEventListener("click", openModal);
 closeIcon.addEventListener("click", closeModal);
 
+// Open directory with call to action
+const cta = document.querySelector("#call-to-action");
+cta.addEventListener("click", () => {
+  openModal();
+  setTimeout(() => {
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+  }, 400);
+});
+
 // LANDING PAGE HELPER FUNCTIONS
 function openModal() {
   // Bring nav to the highest z-index
