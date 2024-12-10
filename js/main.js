@@ -58,20 +58,25 @@ window.onload = () => {
     // menuIcon.style.display = "none";
     menuIcon.style.opacity = 0;
     menuIcon.style.pointerEvents = "none";
+    nav.querySelector("h1").style.pointerEvents = "none";
 
     // Amend menu target class list and z-index
     nav.style.position = "relative";
+    nav.style.top = "0";
+    nav.style.right = "0";
+    nav.style.left = "0";
     nav.style.zIndex = "5";
-    spanElement.classList.add("blown");
+    menuTarget.classList.add("blown");
 
     // Redirect to target after 400ms delay
     setTimeout(() => {
-      window.location.href = target;
+      nav.style.position = "fixed";
+      // window.location.href = target;
     }, 400);
   });
 };
 
-// Helper functions
+// Landing Page Helper functions
 
 const removePlaceholder = (logoContainer) => {
   // Remove placeholder class name, add grow-on-hover class
