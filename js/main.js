@@ -80,6 +80,13 @@ cta.addEventListener("click", () => {
   }, 400);
 });
 
+window.onload = () => {
+  const params = new URLSearchParams(document.location.search);
+  if (params.size > 0) {
+    openModal();
+  }
+};
+
 // LANDING PAGE HELPER FUNCTIONS
 function openModal() {
   // Bring nav to the highest z-index
