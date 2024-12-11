@@ -159,10 +159,15 @@ const generateLogo = (score) => {
 
   // Change logo data and rotation
   rotatingGroup.style.transform = `rotate(${rotateBy}deg)`;
+  logoContainer.classList.add("heartbeat-out");
   logoHref.href = item.id ? `${item.id}.html` : "#";
   logoGraphic.src = item.logo.src || "";
   logoGraphic.alt = `logo of ${item.name || "climbing gym"}, montreal`;
   logoGraphic.style.transform = `rotate(${logoReset}deg)`;
+
+  setTimeout(() => {
+    logoContainer.classList.remove("heartbeat-out");
+  }, 3000);
 
   // Add gym page transition effect
   logoHref.addEventListener("click", function (e) {
