@@ -901,6 +901,10 @@ a.join:active {
   border-radius: 100%;
 }
 
+.nav-bar-circle.active {
+  background-color: var(--green);
+}
+
 .nav-bar-circle:not(:last-child) {
   margin-bottom: 1rem;
 }

@@ -37,21 +37,39 @@ fixedImage.style.background =
 fixedImage.style.backgroundSize = "cover";
 fixedImage.style.height = "140vh";
 
-// const intraNav = document.querySelector(".intra-page-nav");
+// Observe sections and highlight intra-page nav circle
+// green when section is in viewport
+// Callback function
+const trackSection = (entries) => {
+  entries.forEach((entry) => {
+    const element = entry.target;
+    const elementId = element.id;
+    const navTracker = document.querySelector(
+      `a[href='#${elementId}'].nav-bar-circle`
+    );
+    if (entry.isIntersecting) {
+      navTracker.classList.add("active");
+    } else {
+      navTracker.classList.remove("active");
+    }
+  });
+};
+// Create intersection observer with offset margin of half the
+// viewport height
+const margin = document.querySelector("html").clientHeight / 2;
+const sectionObserver = new IntersectionObserver(trackSection, {
+  root: null,
+  rootMargin: `-${margin}px 0px`,
+});
+// Target section elements to be observed
+sectionObserver.observe(document.querySelector("#the-story"));
+sectionObserver.observe(document.querySelector("#neighbourhood"));
+sectionObserver.observe(document.querySelector("#the-wall"));
+sectionObserver.observe(document.querySelector("#social"));
+
 // Add Vanilla JS parallax scrolling
 window.addEventListener("scroll", () => {
   let offset = window.scrollY;
-
-  // Let intra-page navigation circle turn green on section
-  // for (const navCircle of intraNav.children) {
-  //   const sectionId = new URL(navCircle.href).hash;
-  //   const sectionEl = document.querySelector(sectionId);
-  //   if (isInViewport(sectionEl)) {
-  //     navCircle.style.backgroundColor = "var(--green)";
-  //   } else {
-  //     navCircle.style.backgroundColor = "var(--light)";
-  //   }
-  // }
 
   // HEADER SECTION
   const headerImg = document.querySelector(".header-img");
@@ -183,14 +201,3 @@ function createDirectoryPage() {
   // Return the directory page fragment
   return fragment;
 }
-
-const isInViewport = (element) => {
-  const rect = element.getBoundingClientRect();
-  return (
-    rect.top >= 0 &&
-    rect.left >= 0 &&
-    rect.bottom <=
-      (window.innerHeight || document.documentElement.clientHeight) &&
-    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-  );
-};
