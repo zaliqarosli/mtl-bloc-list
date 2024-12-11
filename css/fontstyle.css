@@ -73,7 +73,7 @@ button {
   line-height: 2rem;
 }
 
-.text-input {
+form input {
   /* Text Placeholder - 80/120 Roc Grotesk ExtraLight  */
   font-family: var(--small-font-family);
   font-weight: var(--extralight-weight);
@@ -81,7 +81,7 @@ button {
   line-height: 6rem;
 }
 
-.textarea {
+form textarea {
   /* Textarea Placeholder - 60/120 Roc Grotesk ExtraLight  */
   font-family: var(--small-font-family);
   font-weight: var(--extralight-weight);

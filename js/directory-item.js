@@ -33,7 +33,7 @@ window.onload = () => {
 const fixedImage = document.querySelector(".fixed-image");
 // To-do: Generate url dynamically
 fixedImage.style.background =
-  "url(../images/la-maison-rose.jpg) fixed no-repeat center center";
+  "url(images/la-maison-rose.jpg) fixed no-repeat center center";
 fixedImage.style.backgroundSize = "cover";
 fixedImage.style.height = "140vh";
 
