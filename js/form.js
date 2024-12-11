@@ -29,7 +29,6 @@ const backBtn = document.querySelector(".go-back");
 backBtn.addEventListener("click", () => history.back());
 
 // FORM PAGE HELPER FUNCTIONS
-
 function openModal() {
   // Bring nav to the highest z-index
   nav.classList.toggle("front");
