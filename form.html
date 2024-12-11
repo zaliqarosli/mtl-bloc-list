@@ -15,14 +15,16 @@
   </head>
   <body>
     <header>
-      <nav>
-        <h1 class="title-logo slide-in-left"><a href="/">mtl bloc list</a></h1>
+      <nav class="header-nav">
+        <h1 class="title-logo slide-in-left">
+          <a href="../">mtl bloc list</a>
+        </h1>
         <span class="slide-in-right">
-          <a class="menu-target grow-on-hover" href="/directory.html"
+          <span class="menu-target grow-on-hover"
             ><img
               class="menu-icon tilt-shaking graphic"
               src="images/rock-arrow-light-thick.svg"
-              alt="rock outline with arrow pointing up-right" /></a
+              alt="rock outline with arrow pointing up-right" /></span
         ></span>
       </nav>
       <div class="background-holds">
@@ -52,15 +54,15 @@
         </div>
 
         <!-- Name of gym -->
-        <div>
-          <label for="name" class="roc-grotesk-p">Name of gym</label>
+        <div class="text-field">
+          <label for="name">Name of gym</label>
           <input
             type="text"
             id="name"
             name="name"
             required
-            placeholder="Enter here"
-            class="roc-grotesk-p"
+            placeholder="Slab Shack"
+            class="text-input"
             autocomplete="name"
           />
         </div>
@@ -87,70 +89,70 @@
           </div>
         </div>
         <!-- Street Address of gym -->
-        <div>
+        <div class="text-field">
           <label for="street-address">street address</label>
           <input
             type="text"
             id="street-address"
             name="street-address"
             required
-            placeholder="Enter here"
-            class="roc-grotesk-p"
+            placeholder="123 Av. De Gaston"
+            class="text-input"
             autocomplete="street-address"
           />
         </div>
         <!-- postal code of gym -->
-        <div>
+        <div class="text-field">
           <label for="postal-code">postal code</label>
           <input
             type="text"
             id="postal-code"
             name="postal-code"
             required
-            placeholder="Enter here"
-            class="roc-grotesk-p"
+            placeholder="A1A 1A1"
+            class="text-input"
             autocomplete="postal-code"
           />
         </div>
         <!-- website of gym -->
-        <div>
+        <div class="text-field">
           <label for="url">website</label>
           <input
             type="url"
             id="url"
             name="url"
             required
-            placeholder="Enter here"
-            class="roc-grotesk-p"
+            placeholder="www.slabshack.com"
+            class="text-input"
             autocomplete="url"
           />
         </div>
         <!-- Three words that describe the gym -->
-        <div>
+        <div class="text-field">
           <label for="name-gym">Three words that describe the gym</label>
           <input
             type="text"
             id="describe-gym"
             name="describe-gym"
             required
-            placeholder="Enter here"
-            class="roc-grotesk-p"
+            placeholder="slabby, beach, jungle-gym"
+            class="text-input"
           />
         </div>
         <!-- Synopsis of gym -->
-        <div>
-          <label for="synopsis-gym"
+        <div class="text-field textarea">
+          <label for="synopsis-gym" class="textarea"
             >Synopsis of the gym’s history, story, and vibe in 1200 characters
           </label>
           <textarea
             name="synopsis-gym"
             id="synopsis-gym"
             required
-            placeholder="Enter here"
+            placeholder="Slab Shack is a ...."
             maxlength="1200"
             cols="52"
             rows="1"
-            class="roc-grotesk-p"
+            class="textarea"
           ></textarea>
         </div>
         <!-- Logo upload -->
@@ -161,7 +163,7 @@
             id="logo"
             name="logo"
             accept="image/png"
-            class="roc-grotesk-footer"
+            class="roc-grotesk-p"
           />
         </div>
         <!-- Media upload -->
@@ -174,20 +176,20 @@
             id="media"
             name="media"
             accept="image/png image/jpeg image/svg+xml video/mp4"
-            class="roc-grotesk-footer"
+            class="roc-grotesk-p"
             multiple
           />
         </div>
         <!-- Email addres -->
-        <div>
-          <label for="email">Email address</label>
+        <div class="text-field">
+          <label for="email">Email</label>
           <input
             type="email"
             id="email"
             name="email"
             required
-            placeholder="Enter here"
-            class="roc-grotesk-p"
+            placeholder="gumby@jugs.com"
+            class="text-input"
             autocomplete="email"
           />
         </div>
@@ -198,10 +200,8 @@
     <footer>
       <!-- Footer navigation -->
       <nav class="nav-footer">
-        <h3>
-          <a href="directory.html">
-            <i class="fa-solid fa-arrow-left rotate-45"></i> back
-          </a>
+        <h3 class="go-back">
+          <i class="fa-solid fa-arrow-left rotate-45"></i> back
         </h3>
         <a href="#" id="scroll-to-top" class="grow-on-hover">
           <p class="nav-inner-circle">
@@ -212,16 +212,28 @@
       <!-- Icons section -->
       <div class="contact-links">
         <span class="icon-container">
-          <a class="footer-icon grow-on-hover" href="#"
+          <a
+            class="footer-icon grow-on-hover"
+            href="https://www.linkedin.com/in/zaliqa-rosli-813955104/"
+            target="_blank"
             ><i class="fa-brands fa-linkedin"></i
           ></a>
-          <a class="footer-icon grow-on-hover" href="#"
+          <a
+            class="footer-icon grow-on-hover"
+            href="https://github.com/zaliqarosli"
+            target="_blank"
             ><i class="fa-brands fa-square-github"></i
           ></a>
         </span>
-        <p><a href="#">design by zaliqa rosli</a></p>
-        <p>zaliqarosli@gmail.com</p>
+        <p>
+          <a href="#">MTL BLOC LIST© by ZALIQA ROSLI</a>
+        </p>
+        <a href="mailto:zaliqarosli@gmail.com">
+          <p>zaliqarosli@gmail.com</p>
+        </a>
       </div>
     </footer>
+    <script src="js/form.js"></script>
+    <script src="js/directory.js"></script>
   </body>
 </html>

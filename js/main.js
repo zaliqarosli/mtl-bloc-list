@@ -35,7 +35,7 @@ notSure.addEventListener("click", () => {
   // Append beginner query parameter to url
   const url = new URL(location);
   url.searchParams.set("beginner", true);
-  history.pushState({}, "", url);
+  history.replaceState({}, "", url);
   // Open modal
   openModal();
   setTimeout(() => {
@@ -80,6 +80,7 @@ cta.addEventListener("click", () => {
   }, 400);
 });
 
+// Open modal on load if url has any query parameter
 window.onload = () => {
   const params = new URLSearchParams(document.location.search);
   if (params.size > 0) {
@@ -119,7 +120,7 @@ function closeModal() {
   openIcon.classList.toggle("blown");
   // Remove any query params from URL
   const url = new URL(location);
-  history.pushState({}, "", url.pathname);
+  history.replaceState({}, "", url.pathname);
   setTimeout(() => {
     // Return menu-icon to display after modal transition completes
     menuIcon.classList.toggle("hidden");

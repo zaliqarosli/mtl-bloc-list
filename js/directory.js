@@ -5,10 +5,9 @@ const map = document.querySelector(".map-logos");
 const pinsContainer = document.querySelector(".map-pins");
 
 // Fetch data and generate dynamic content
-// json variable already initialized in main.js
-// const json = "json/directory.json";
+const jsonURL = "json/directory.json";
 let itemFilters = {};
-fetch(json)
+fetch(jsonURL)
   .then((response) => {
     if (!response.ok) {
       throw new Error(`Error: ${response.status}`);
@@ -156,7 +155,7 @@ function toggleFiltering(chip, filterName) {
     url.searchParams.delete(chip.id, true);
   }
 
-  history.pushState({}, "", url);
+  history.replaceState({}, "", url);
   filterList(enabledChip);
 }
 
