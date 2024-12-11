@@ -988,7 +988,7 @@ section.the-story article {
   width: 60%;
 }
 
-section.the-story p,
+/* section.the-story p, */
 section.neighbourhood p {
   padding-bottom: 0;
 }
