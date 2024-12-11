@@ -8,7 +8,7 @@
         "src": "images/logo/logo-dark-AU.png",
         "coord": "top: 54%; left: 54%"
       },
-      "href": "directory/allezup.html",
+      "href": "allezup.html",
       "mapPins": [
         {
           "id": "allezup-pin-mile",
@@ -40,7 +40,7 @@
         "src": "images/logo/betalogo.jpeg",
         "coord": "top: 55%; left: 30%"
       },
-      "href": "directory/betabloc.html",
+      "href": "betabloc.html",
       "mapPins": [
         {
           "id": "betablock-pin",
@@ -62,7 +62,7 @@
         "src": "images/logo/bloc-shop-logo.png",
         "coord": "top: 32%; left: 48%"
       },
-      "href": "directory/blocshop.html",
+      "href": "blocshop.html",
       "mapPins": [
         {
           "id": "blocshop-pin-mile",
@@ -94,7 +94,7 @@
         "src": "images/logo/cafebloclogo.jpg",
         "coord": "top: 55%; left: 55%"
       },
-      "href": "directory/cafebloc.html",
+      "href": "cafebloc.html",
       "mapPins": [
         {
           "id": "cafebloc-pin",
@@ -116,7 +116,7 @@
         "src": "images/logo/horizonroclogo.jpg",
         "coord": "top: 20%; left: 70%"
       },
-      "href": "directory/horizonrockclimbing.html",
+      "href": "horizonrockclimbing.html",
       "mapPins": [
         {
           "id": "horizonroc-pin",
@@ -138,7 +138,7 @@
         "src": "images/logo/lecruxlogo.jpg",
         "coord": "top: 20%; left: 25%"
       },
-      "href": "directory/lecrux.html",
+      "href": "lecrux.html",
       "mapPins": [
         {
           "id": "lecrux-pin-lav",
@@ -165,7 +165,7 @@
         "src": "images/logo/lemouvlogo.jpg",
         "coord": "top: 22%; left: 60%"
       },
-      "href": "directory/lemouv.html",
+      "href": "lemouv.html",
       "mapPins": [
         {
           "id": "lemouv-pin",
@@ -187,7 +187,7 @@
         "src": "images/logo/nomad_logo.jpg",
         "coord": "top: 24%; left: 65%"
       },
-      "href": "directory/nomadbloc.html",
+      "href": "nomadbloc.html",
       "mapPins": [
         {
           "id": "nomadbloc-pin",
@@ -209,7 +209,7 @@
         "src": "images/logo/offsite_logo.jpg",
         "coord": "top: 24%; left: 80%"
       },
-      "href": "directory/offsiteclimbing.html",
+      "href": "offsiteclimbing.html",
       "mapPins": [
         {
           "id": "offsite-pin",
@@ -231,7 +231,7 @@
         "src": "images/logo/rosebloclogo.jpg",
         "coord": "top: 45%; left: 85%"
       },
-      "href": "directory/rosebloc.html",
+      "href": "rosebloc.html",
       "mapPins": [
         {
           "id": "rosebloc-pin-long",
@@ -258,7 +258,7 @@
         "src": "images/logo/shakti_logo.jpg",
         "coord": "top: 33%; left: 50%"
       },
-      "href": "directory/shaktirockgym.html",
+      "href": "shaktirockgym.html",
       "mapPins": [
         {
           "id": "shakti-pin",

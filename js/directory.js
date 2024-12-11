@@ -25,13 +25,14 @@ fetch(jsonURL)
       itemFilters[item.id] = item.filter;
 
       // Create list items
-      const li = createListItem(item.id, item.name, item.href);
+      const href = `${item.id}.html`;
+      const li = createListItem(item.id, item.name, href);
       const liText = li.firstChild;
       listFragment.append(li);
 
       // Create map pins and logos
-      const logo = createLogo(item.id, item.logo, item.name, item.href);
-      const pins = createMapPins(item.id, item.mapPins, item.href);
+      const logo = createLogo(item.id, item.logo, item.name, href);
+      const pins = createMapPins(item.id, item.mapPins, href);
 
       // Append pins to fragment and add event listeners
       pins.forEach((pin) => {

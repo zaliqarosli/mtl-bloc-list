@@ -159,17 +159,17 @@ const generateLogo = (score) => {
 
   // Change logo data and rotation
   rotatingGroup.style.transform = `rotate(${rotateBy}deg)`;
-  logoHref.href = item.href ? `/${item.href}` : "#";
+  logoHref.href = item.id ? `/${item.id}.html` : "#";
   logoGraphic.src = item.logo.src || "";
   logoGraphic.alt = `logo of ${item.name || "climbing gym"}, montreal`;
   logoGraphic.style.transform = `rotate(${logoReset}deg)`;
 
   // Add gym page transition effect
-  logoHref.addEventListener("click", (e) => {
+  logoHref.addEventListener("click", function (e) {
     e.preventDefault();
 
     // Set target from logo href const because e.target targets img inside anchor element
-    const target = logoHref.href;
+    const target = this.href;
 
     // Remove logo image and pink hold from display
     logoGraphic.style.display = "none";
@@ -178,8 +178,8 @@ const generateLogo = (score) => {
     }, 100);
 
     // Blow up logoHref element
-    logoHref.style.border = "none";
-    logoHref.classList.add("blown");
+    this.style.border = "none";
+    this.classList.add("blown");
 
     // Redirect to target after 400ms delay
     setTimeout(() => {
