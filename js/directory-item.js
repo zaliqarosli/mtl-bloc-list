@@ -67,7 +67,7 @@ window.addEventListener("scroll", () => {
 
   // THE WALL SECTION
   const wallTitle = document.querySelector(".the-wall-container>h1");
-  wallTitle.style.transform = `translateX(${offset * 1 - 3000}px)`;
+  wallTitle.style.transform = `translateX(${offset * 1.25 - 4800}px)`;
 
   // CLIMBER SECTION
   const climberTitle = document.querySelector(".climber-content>h1");

@@ -1044,7 +1044,6 @@ section.the-wall {
 }
 
 section.the-wall article.the-wall-container {
-  max-width: none;
   padding: 0 var(--gym-page-pad);
 }
 
@@ -1111,6 +1110,9 @@ section.the-wall .gym-logo {
 .social-initiatives h4 {
   padding: 0;
   padding-bottom: 1rem;
+}
+.social-initiatives h1,
+.social-initiatives h4 {
   max-width: 60%;
 }
 
@@ -1123,7 +1125,7 @@ section.the-wall .gym-logo {
   /* grid-template-columns: repeat(2, minmax(40%, 1fr)); */
   grid-template-columns: 1fr 41.5%;
   column-gap: 3rem;
-  margin-top: 20rem;
+  margin-top: 12rem;
   background-color: var(--grey);
 }
 
@@ -1223,10 +1225,7 @@ section.the-wall .gym-logo {
     column-gap: 2rem;
     row-gap: 4rem;
     grid-auto-flow: column;
-    margin-top: calc(2 * var(--gym-page-pad));
-  }
-  .social-initiatives header {
-    max-width: 90%;
+    margin-top: var(--gym-page-pad);
   }
   .social-initiatives h1,
   .social-initiatives h4 {
