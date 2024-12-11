@@ -892,6 +892,9 @@ a.join:active {
   padding: 2.5rem 2rem 2.5rem 1rem;
   align-items: flex-start;
 }
+.intra-page-nav.hidden {
+  display: none;
+}
 
 .nav-bar-circle {
   background-color: var(--light);
@@ -932,6 +935,10 @@ a.join:active {
   z-index: 98;
 }
 
+.gym-header .title-container.hidden {
+  display: none;
+}
+
 .gym-header h1.gym-page-title {
   /* position: absolute;
   bottom: 4rem;
@@ -948,6 +955,9 @@ a.join:active {
   right: 0rem;
   width: 40%;
   z-index: 99;
+}
+.gym-header .overlay-img.hidden {
+  display: none;
 }
 
 main.gym-page-main {

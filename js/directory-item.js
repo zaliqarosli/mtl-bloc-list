@@ -7,11 +7,14 @@ const footer = body.querySelector("footer");
 body.prepend(createDirectoryPage());
 
 // Open directory page modal with transition
-const nav = document.querySelector(".header-nav");
+const nav = document.querySelector(".site-nav");
 const openIcon = document.querySelector(".menu-target");
 const closeIcon = document.querySelector(".close-icon");
 const menuIcon = document.querySelector(".menu-icon");
 const modal = document.querySelector(".directory-page");
+const titleContainer = document.querySelector(".title-container");
+const overlayImg = document.querySelector(".overlay-img");
+const intraNav = document.querySelector(".intra-page-nav");
 
 openIcon.addEventListener("click", openModal);
 closeIcon.addEventListener("click", closeModal);
@@ -78,13 +81,6 @@ window.addEventListener("scroll", () => {
   logo.style.transform = `rotate(-10deg) translateY(calc(-60rem + ${
     offset * 0.2
   }px))`;
-
-  // SOCIAL INITIATIVES SECTION
-  // const socialTitle = document.querySelector(".social-initiatives>article>h1");
-  // const socialPosY = socialTitle.getBoundingClientRect().top + offset;
-  // socialTitle.style.transform = `translateX(${
-  //   socialPosY - offset * 1.25 + 800
-  // }px)`;
 });
 
 // HELPER FUNCTIONS
@@ -93,8 +89,11 @@ function openModal() {
   nav.classList.toggle("front");
   // Trigger modal transition
   openIcon.classList.toggle("blown");
-  // Remove menu-icon from display
+  // Remove menu-icon, overlays from display
   menuIcon.classList.toggle("hidden");
+  titleContainer.classList.toggle("hidden");
+  overlayImg.classList.toggle("hidden");
+  intraNav.classList.toggle("hidden");
   // After modal transition completes, change the display
   setTimeout(() => {
     // Display modal
@@ -121,8 +120,11 @@ function closeModal() {
   const url = new URL(location);
   history.replaceState({}, "", url.pathname);
   setTimeout(() => {
-    // Return menu-icon to display after modal transition completes
+    // Return menu-icon, overlays to display after modal transition completes
     menuIcon.classList.toggle("hidden");
+    titleContainer.classList.toggle("hidden");
+    overlayImg.classList.toggle("hidden");
+    intraNav.classList.toggle("hidden");
     // Remove nav z-index
     nav.classList.toggle("front");
   }, 200);
