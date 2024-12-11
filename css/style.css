@@ -1089,11 +1089,12 @@ section.the-wall .gym-logo {
 .social-initiatives article {
   max-width: 100%;
   padding: var(--gym-page-pad);
+  padding-top: 0;
   display: flex;
   flex-flow: column;
-  align-items: end;
-  position: absolute;
-  top: 64rem;
+  align-items: center;
+  position: relative;
+  top: calc(-1 * var(--gym-page-pad));
 }
 
 .social-initiatives article img {
@@ -1101,7 +1102,8 @@ section.the-wall .gym-logo {
 }
 
 .social-initiatives header {
-  max-width: 52%;
+  text-align: left;
+  padding-left: 3rem;
 }
 
 .social-initiatives h1,
@@ -1109,6 +1111,7 @@ section.the-wall .gym-logo {
 .social-initiatives h4 {
   padding: 0;
   padding-bottom: 1rem;
+  max-width: 60%;
 }
 
 .social-initiatives p {
@@ -1198,10 +1201,6 @@ section.the-wall .gym-logo {
 
 /* FOOTER */
 
-.gym-page-footer {
-  top: 188rem;
-}
-
 .gym-page-footer h2,
 .gym-page-footer h2::first-letter {
   text-transform: capitalize;
@@ -1220,9 +1219,6 @@ section.the-wall .gym-logo {
 /* Media Queries */
 
 @media screen and (max-width: 1200px) {
-  .social-initiatives article {
-    top: 48rem;
-  }
   .social-initiatives .grid-group {
     column-gap: 2rem;
     row-gap: 4rem;
@@ -1244,9 +1240,6 @@ section.the-wall .gym-logo {
   }
   .social-initiatives .card-group .content {
     top: 2rem;
-  }
-  .gym-page-footer {
-    top: 133rem;
   }
 }
 
