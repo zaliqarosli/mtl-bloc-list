@@ -50,7 +50,9 @@ lucky.addEventListener("click", () => {
   if (logoContainer.classList.contains("heart-placeholder")) {
     removePlaceholder(logoContainer);
   }
-  randomizeLogo();
+  const item = randomizeLogo();
+  // Update slider position according to item's score
+  slider.value = item.score;
 });
 
 // Get body's main and footer
@@ -191,13 +193,15 @@ const generateLogo = (score) => {
       window.location.href = target;
     }, 400);
   });
+
+  return item;
 };
 
 const randomizeLogo = () => {
   // Find random int from 0 to 100
   const randomInt = Math.floor(Math.random() * 100);
   // Generate a logo for the random score
-  generateLogo(randomInt);
+  return generateLogo(randomInt);
 };
 
 // Return item with a score that's closest to the input score
