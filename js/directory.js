@@ -44,11 +44,13 @@ fetch(jsonURL)
           setTimeout(() => logo.firstChild.classList.remove("hidden"), 1);
           // Highlist list item text
           liText.classList.add("highlight");
+          pin.firstChild.src = "images/pin_red.svg";
         });
         pin.addEventListener("mouseout", () => {
           // Hide logo, unhighlight list item text
           logo.firstChild.classList.add("hidden");
           liText.classList.remove("highlight");
+          pin.firstChild.src = "images/pin_alt.svg";
         });
       });
 
@@ -59,7 +61,9 @@ fetch(jsonURL)
         setTimeout(() => logo.firstChild.classList.remove("hidden"), 1);
         // Bob pin
         pins.forEach((pin) => {
-          pin.firstChild.classList.add("heartbeat");
+          const img = pin.firstChild;
+          img.src = "images/pin_red.svg";
+          img.classList.add("heartbeat");
         });
       });
       // Remove logo, shrink pins when mouse leaves list item
@@ -67,7 +71,9 @@ fetch(jsonURL)
         // Hide logo, bob pin
         logo.firstChild.classList.add("hidden");
         pins.forEach((pin) => {
-          pin.firstChild.classList.remove("heartbeat");
+          const img = pin.firstChild;
+          img.src = "images/pin_alt.svg";
+          img.classList.remove("heartbeat");
         });
       });
     });
