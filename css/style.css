@@ -31,6 +31,9 @@ header {
   position: relative;
   overflow-x: clip;
   text-align: center;
+  background: url(../images/landing-background_xs.png) no-repeat center center;
+  background-size: cover;
+  padding-bottom: 5rem;
 }
 
 nav {
@@ -339,16 +342,16 @@ button {
 
 .green-hold {
   opacity: 0.75;
-  top: 40%;
+  top: 36%;
   left: -8vw;
 }
 .purple-hold {
-  top: 28%;
+  top: 26%;
   right: -9vw;
 }
 
 .red-hold {
-  top: 94%;
+  top: 87%;
   right: -3vw;
 }
 
@@ -366,6 +369,7 @@ main {
   flex-flow: column nowrap;
   justify-content: space-evenly;
   overflow-x: clip;
+  margin-top: -5rem;
 }
 
 main.hidden {
@@ -969,6 +973,13 @@ main.gym-page-main {
   border-radius: 0;
   top: 0;
   padding: 0;
+  margin-top: 0;
+}
+
+.background-container {
+  background: url(../images/item-background-1_xs.png) no-repeat center center
+    var(--grey);
+  background-size: cover;
 }
 
 section.the-story {
@@ -1055,6 +1066,10 @@ section.neighbourhood > img {
 section.the-wall {
   background-color: var(--dark);
   padding-top: var(--gym-page-pad);
+  background-image: url(../images/thewall_background_xs.png),
+    linear-gradient(var(--dark), var(--grey));
+  background-repeat: round, no-repeat;
+  background-size: contain, cover;
 }
 
 section.the-wall article.the-wall-container {
@@ -1097,17 +1112,25 @@ section.the-wall .gym-logo {
 
 .social-initiatives > img {
   mix-blend-mode: lighten;
+  position: relative;
+  z-index: 1;
 }
 
 .social-initiatives article {
   max-width: 100%;
   padding: var(--gym-page-pad);
-  padding-top: 0;
   display: flex;
   flex-flow: column;
   align-items: center;
   position: relative;
-  top: calc(-1 * var(--gym-page-pad));
+  top: calc(-4 * var(--gym-page-pad));
+  background-image: url(../images/social-background-1_xs.png),
+    url(../images/social-background-2_xs.png),
+    url(../images/social-background-3_xs.png),
+    url(../images/social-background-4_xs.png);
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position: 50% 0rem, 50% 60rem, 50% 120rem, 50% 180rem;
+  background-size: 100% 60rem;
 }
 
 .social-initiatives article img {
@@ -1117,6 +1140,7 @@ section.the-wall .gym-logo {
 .social-initiatives header {
   text-align: left;
   padding-left: 3rem;
+  background: none;
 }
 
 .social-initiatives h1,
@@ -1140,7 +1164,6 @@ section.the-wall .gym-logo {
   grid-template-columns: 1fr 41.5%;
   column-gap: 3rem;
   margin-top: 12rem;
-  background-color: var(--grey);
 }
 
 .grid-1 {
@@ -1253,6 +1276,12 @@ section.the-wall .gym-logo {
   }
   .social-initiatives .card-group .content {
     top: 2rem;
+  }
+}
+
+@media screen and (max-width: 1032px) {
+  .the-vibe {
+    margin-top: 3rem;
   }
 }
 
