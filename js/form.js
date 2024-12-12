@@ -105,10 +105,10 @@ function createDirectoryPage() {
         <legend>Filter:</legend>
       </fieldset>
       <ul class="directory-list-items unbounded-h3"></ul>
-      <p class="roc-grotesk-footer right-align">
-         <a href="form.html" class="join"
-          >Not on the list? <strong>Join.</strong></a
-        >
+      <p class="roc-grotesk-footer right-align cta-small">
+        <a href="form.html" class="join">
+          Are you a new gym? <strong>Join the list.</strong>
+        </a>
       </p>
     </div>
   `;

@@ -773,7 +773,7 @@ fieldset {
   border-radius: 1rem;
   max-width: fit-content;
   border: none;
-  padding: 6rem 0 2rem 0;
+  padding: 6rem 0 1rem 0;
 }
 
 fieldset legend {
@@ -801,6 +801,18 @@ button.filter-chip > span {
 li {
   list-style: none;
   padding-bottom: 0.3rem;
+}
+
+.directory-list {
+  position: relative;
+}
+
+.cta-small {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding-bottom: 0.3rem;
+  max-width: 10rem;
 }
 
 /* --- CUSTOM LINK STYLING --- */
@@ -844,6 +856,11 @@ a.join:active {
   .directory-list-items {
     column-count: 2;
   }
+
+  .cta-small {
+    position: static;
+    max-width: none;
+  }
 }
 
 @media screen and (max-width: 960px) {
@@ -853,6 +870,10 @@ a.join:active {
   }
   .directory-list-items {
     column-count: 1;
+  }
+  .cta-small {
+    position: absolute;
+    max-width: 10rem;
   }
 }
 
@@ -1069,7 +1090,7 @@ section.the-wall {
   background-image: url(../images/thewall_background_xs.png),
     linear-gradient(var(--dark), var(--grey));
   background-repeat: round, no-repeat;
-  background-size: contain, cover;
+  background-size: cover, cover;
 }
 
 section.the-wall article.the-wall-container {
@@ -1324,7 +1345,12 @@ section.the-wall .gym-logo {
   }
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 450px) {
+  .cta-small {
+    position: static;
+    max-width: none;
+  }
+
   .gym-header h1.gym-page-title {
     padding-right: 1.5rem;
   }
