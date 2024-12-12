@@ -1114,6 +1114,8 @@ section.the-wall .gym-logo {
   mix-blend-mode: lighten;
   position: relative;
   z-index: 1;
+  position: absolute;
+  top: 0;
 }
 
 .social-initiatives article {
@@ -1122,8 +1124,7 @@ section.the-wall .gym-logo {
   display: flex;
   flex-flow: column;
   align-items: center;
-  position: relative;
-  top: calc(-4 * var(--gym-page-pad));
+  margin-top: 80%;
   background-image: url(../images/social-background-1_xs.png),
     url(../images/social-background-2_xs.png),
     url(../images/social-background-3_xs.png),
