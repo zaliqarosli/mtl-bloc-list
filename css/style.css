@@ -561,8 +561,8 @@ form textarea {
 form input::placeholder,
 form textarea::placeholder {
   color: var(--bright-grey);
-  font-size: 4rem;
   line-height: 6rem;
+  font-size: 4rem;
 }
 
 form textarea::placeholder {
@@ -1431,17 +1431,108 @@ section.the-wall .gym-logo {
     max-width: none;
   }
 
+  form {
+    max-width: 90vw;
+    padding: 0 0 1rem 0;
+    margin: 0 -1rem;
+  }
+
+  .form-slider .left-label {
+    padding-left: 0rem;
+  }
+
+  .form-slider .right-label {
+    padding-right: 0rem;
+  }
+
+  form .text-field {
+    padding-bottom: 1rem;
+  }
+
+  form input::placeholder,
+  form textarea::placeholder {
+    color: var(--bright-grey);
+    line-height: 3rem;
+    font-size: 2rem;
+  }
+
+  form textarea::placeholder {
+    font-size: 1.5rem;
+  }
+
+  input::file-selector-button {
+    height: 40px;
+    padding: 0.75rem 1rem;
+  }
+
+  .gym-page.sticky-container {
+    margin-top: -9vh;
+  }
+
+  .intra-page-nav {
+    flex-flow: row;
+    float: none;
+    top: 92vh;
+    padding: 1rem 2rem;
+    border-bottom-left-radius: 0rem;
+    border-top-right-radius: 4.5rem;
+  }
+
+  .gym-header {
+    padding: calc(var(--gym-page-pad) / 2);
+  }
+
   .gym-header h1.gym-page-title {
     padding-right: 1.5rem;
   }
+
+  .gym-header .overlay-img {
+    bottom: calc(-1.5 * var(--gym-page-pad));
+  }
+
+  section.the-story {
+    margin-top: calc(var(--gym-page-pad) / 2);
+    /* padding: 2.5rem calc(var(--gym-page-pad) / 2); */
+  }
+
+  .neighbourhood-content {
+    padding: calc(var(--gym-page-pad) / 2);
+  }
+
+  .gym-page article {
+    max-width: 70vw;
+  }
+
+  .the-vibe {
+    margin-top: 7rem;
+    padding: 3rem;
+    right: calc(var(--gym-page-pad) / 2);
+  }
+
   section.the-wall {
     padding-top: calc(var(--gym-page-pad) * 2);
   }
+
+  .the-wall-container h1,
+  .the-wall-container section {
+    padding-bottom: 2.5rem;
+  }
+
+  .the-wall-container section.pricing {
+    padding-bottom: 0;
+  }
+
   section.the-wall img {
-    width: 30%;
+    width: 40%;
   }
   section.the-wall article.the-wall-container {
-    padding-top: calc(var(--gym-page-pad) / 2);
+    padding: calc(var(--gym-page-pad) / 2);
+    max-width: 80vw;
+  }
+
+  .social-initiatives article {
+    max-width: 100%;
+    padding: calc(var(--gym-page-pad) / 2);
   }
 }
 
