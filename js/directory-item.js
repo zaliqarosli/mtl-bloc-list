@@ -69,15 +69,22 @@ sectionObserver.observe(document.querySelector("#social"));
 
 // Add Vanilla JS parallax scrolling
 window.addEventListener("scroll", () => {
+  // Set window scroll offset
   let offset = window.scrollY;
+  // Create a MediaQueryList object for mobile
+  const mobile = window.matchMedia("screen and (max-width: 450px)");
 
   // HEADER SECTION
   const headerImg = document.querySelector(".header-img");
-  const overlayImg = document.querySelector(".overlay-img");
-  const headerTitle = document.querySelector(".title-container");
   headerImg.style.transform = `translateY(-${offset * 0.25}px)`;
-  overlayImg.style.bottom = `calc(-28rem + ${offset * 1}px)`;
+  const headerTitle = document.querySelector(".title-container");
   headerTitle.style.transform = `rotate(-5deg) translateX(${offset * 0.5}px)`;
+  // Call listener function on load for header overlay
+  animateOverlay(mobile, offset);
+  // Attach listener function on state changes
+  mobile.addEventListener("change", () => {
+    animateOverlay(mobile, offset);
+  });
 
   // NEIGHBOURHOOD SECTION
   const locationTitle = document.querySelector(".neighbourhood-content>h1");
@@ -87,8 +94,12 @@ window.addEventListener("scroll", () => {
   }px)`;
 
   // THE WALL SECTION
-  const wallTitle = document.querySelector(".the-wall-container>h1");
-  wallTitle.style.transform = `translateX(${offset * 1.25 - 4800}px)`;
+  // Call listener function on load for header overlay
+  animateWallTitle(mobile, offset);
+  // Attach listener function on state changes
+  mobile.addEventListener("change", () => {
+    animateWallTitle(mobile, offset);
+  });
 
   // CLIMBER SECTION
   const climberTitle = document.querySelector(".climber-content>h1");
@@ -102,6 +113,25 @@ window.addEventListener("scroll", () => {
 });
 
 // HELPER FUNCTIONS
+function animateOverlay(media, offset) {
+  const overlayImg = document.querySelector(".overlay-img");
+  if (media.matches) {
+    // If mobile media query matches
+    overlayImg.style.bottom = `calc(-14rem + ${offset * 1}px)`;
+  } else {
+    overlayImg.style.bottom = `calc(-28rem + ${offset * 1}px)`;
+  }
+}
+
+function animateWallTitle(media, offset) {
+  const wallTitle = document.querySelector(".the-wall-container>h1");
+  if (media.matches) {
+    wallTitle.style.transform = `translateX(${offset * 0.5 - 1500}px)`;
+  } else {
+    wallTitle.style.transform = `translateX(${offset * 1.25 - 4800}px)`;
+  }
+}
+
 function openModal() {
   // Bring nav to the highest z-index
   nav.classList.toggle("front");
