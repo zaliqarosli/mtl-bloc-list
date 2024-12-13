@@ -31,17 +31,9 @@
     both;
 }
 
-.heartbeat {
-  animation: heartbeat 1.5s ease-in 3 both;
-}
-
 .heartbeat-out {
-  animation: heartbeat-out 1.5s ease-in 3 both 0.5s;
+  animation: heartbeat-out 1.5s ease-in infinite both 0.5s;
 }
-
-/* .crawl-right {
-  animation: crawl-right 30s linear 1;
-} */
 
 /* --- Keyframes --- */
 /* ----------------------------------------------
@@ -198,31 +190,7 @@
  * See http://animista.net/license for more info. 
  * w: http://animista.net, t: @cssanimista
  * ---------------------------------------------- */
-
-@keyframes heartbeat {
-  from {
-    transform: scale(1);
-    transform-origin: center center;
-    animation-timing-function: ease-out;
-  }
-  10% {
-    transform: scale(0.91);
-    animation-timing-function: ease-in;
-  }
-  17% {
-    transform: scale(0.98);
-    animation-timing-function: ease-out;
-  }
-  33% {
-    transform: scale(0.87);
-    animation-timing-function: ease-in;
-  }
-  45% {
-    transform: scale(1);
-    animation-timing-function: ease-out;
-  }
-}
-
+/* Amended from Animista's 'heartbeat' animation  */
 @keyframes heartbeat-out {
   from {
     transform: scale(1);
@@ -246,15 +214,3 @@
     animation-timing-function: ease-out;
   }
 }
-
-/* @keyframes crawl-right {
-  from {
-    transform: rotate(-27deg) translateX(-100%);
-  }
-  50% {
-    transform: rotate(-27deg) translateX(0);
-  }
-  100% {
-    transform: rotate(-27deg) translateX(100%);
-  }
-} */

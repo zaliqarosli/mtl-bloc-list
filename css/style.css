@@ -766,6 +766,16 @@ input::file-selector-button {
   display: inline-block;
   transition: all 0.2s;
   transform-origin: bottom;
+  filter: none;
+}
+
+.directory-map img.pin.gray-out {
+  filter: grayscale(100%);
+  z-index: 4;
+}
+
+.directory-map img.pin:hover {
+  transform: scale(1.2);
 }
 
 .directory-map .map-logos img.logo {
@@ -785,10 +795,6 @@ input::file-selector-button {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-}
-
-.directory-map img.pin:hover {
-  transform: scale(1.2);
 }
 
 .directory-content {

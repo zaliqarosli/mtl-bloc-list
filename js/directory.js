@@ -44,17 +44,17 @@ fetch(jsonURL)
           setTimeout(() => logo.firstChild.classList.remove("hidden"), 1);
           // Highlist list item text
           liText.classList.add("highlight");
-          pin.firstChild.src = "images/pin_red.svg";
         });
         pin.addEventListener("mouseout", () => {
           // Hide logo, unhighlight list item text
           logo.firstChild.classList.add("hidden");
           liText.classList.remove("highlight");
-          pin.firstChild.src = "images/pin_alt.svg";
+          pin.firstChild.src = "images/pin_pink.svg";
         });
       });
 
       // Pop up respective logo, enlarge pins when hovering over list item
+
       liText.addEventListener("mouseover", () => {
         map.append(logo);
         // Remove hidden after timeout to allow transition to display
@@ -62,8 +62,13 @@ fetch(jsonURL)
         // Bob pin
         pins.forEach((pin) => {
           const img = pin.firstChild;
-          img.src = "images/pin_red.svg";
-          img.classList.add("heartbeat");
+          img.classList.add("heartbeat-out");
+        });
+        // Make other pins less visible
+        const allPins = document.querySelectorAll(".map-pins > a");
+        const otherPins = [...allPins].filter((pin) => !pins.includes(pin));
+        otherPins.forEach((pin) => {
+          pin.firstChild.classList.add("gray-out");
         });
       });
       // Remove logo, shrink pins when mouse leaves list item
@@ -72,8 +77,12 @@ fetch(jsonURL)
         logo.firstChild.classList.add("hidden");
         pins.forEach((pin) => {
           const img = pin.firstChild;
-          img.src = "images/pin_alt.svg";
-          img.classList.remove("heartbeat");
+          img.classList.remove("heartbeat-out");
+        });
+        // Return colour to all pins
+        const allPins = document.querySelectorAll(".map-pins > a");
+        allPins.forEach((pin) => {
+          pin.firstChild.classList.remove("gray-out");
         });
       });
     });
@@ -213,7 +222,7 @@ const createMapPins = (id, pins, href) => {
     img.id = pin.id;
     img.loading = "lazy";
     img.classList.add("pin");
-    img.src = "images/pin_alt.svg";
+    img.src = "images/pin_pink.svg";
     img.alt = pin.alt || "";
     img.style = pin.coord;
     a.append(img);
