@@ -672,11 +672,12 @@ input::file-selector-button {
   }
 
   .green-hold {
-    top: 20%;
+    top: 16%;
   }
 
   .purple-hold {
-    top: 60%;
+    top: 58%;
+    right: -11vw;
   }
 
   .red-hold {
@@ -743,6 +744,8 @@ input::file-selector-button {
   top: 0;
   right: 0;
   left: 0;
+  /* Crucial to fix extra space showing on mobile */
+  overflow: hidden;
 }
 
 .directory-page.is-active {
@@ -1392,6 +1395,37 @@ section.the-wall .gym-logo {
 }
 
 @media screen and (max-width: 450px) {
+  .pink-center-hold {
+    max-width: 6rem;
+  }
+
+  .tape-decoration {
+    height: 11rem;
+  }
+
+  .tooltip .tooltiptext {
+    min-width: 12rem;
+    top: -10rem;
+    right: -20%;
+  }
+
+  .left-label {
+    padding-left: 2rem;
+  }
+
+  .right-label {
+    padding-right: 2rem;
+  }
+
+  .contact-links {
+    align-items: center;
+  }
+
+  .contact-links > p {
+    max-width: 30%;
+    text-align: center;
+  }
+
   .cta-small {
     position: static;
     max-width: none;
