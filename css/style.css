@@ -221,10 +221,50 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* padding: 0.25rem; */
-  /* position: relative; */
-  /* left: -11rem; */
-  /* top: -10rem; */
+  /* Need relative position for tooltip child */
+  position: relative;
+}
+
+.logo-container:hover {
+  background-color: var(--green);
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  min-width: 16rem;
+  width: auto;
+  height: auto;
+  background-color: var(--blue);
+  color: white;
+  text-align: center;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 0.4rem;
+  position: absolute;
+  top: -8rem;
+  right: -50%;
+  transform: rotate(-15deg);
+  z-index: 1;
+  font-weight: var(--light-weight);
+  font-size: 1.25rem;
+}
+
+/* Add arrow to tooltip text */
+.tooltip .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 99%; /* At the bottom of the tooltip minus 1% to remove visible gap */
+  left: 50%;
+  margin-left: -1rem;
+  border-width: 1rem;
+  border-style: solid;
+  border-color: var(--blue) transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }
 
 .heart-placeholder {

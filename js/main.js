@@ -134,8 +134,6 @@ function closeModal() {
 const removePlaceholder = (logoContainer) => {
   // Remove placeholder class name, add grow-on-hover class
   logoContainer.classList.remove("heart-placeholder");
-  logoContainer.classList.add("grow-on-hover");
-
   logoContainer.innerHTML = `
       <a href="" class="logo-href">
           <img
@@ -166,10 +164,6 @@ const generateLogo = (score) => {
   logoGraphic.src = item.logo.src || "";
   logoGraphic.alt = `logo of ${item.name || "climbing gym"}, montreal`;
   logoGraphic.style.transform = `rotate(${logoReset}deg)`;
-
-  setTimeout(() => {
-    logoContainer.classList.remove("heartbeat-out");
-  }, 3000);
 
   // Add gym page transition effect
   logoHref.addEventListener("click", function (e) {
