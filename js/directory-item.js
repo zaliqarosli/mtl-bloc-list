@@ -19,15 +19,13 @@ const intraNav = document.querySelector(".intra-page-nav");
 openIcon.addEventListener("click", openModal);
 closeIcon.addEventListener("click", closeModal);
 
-window.onload = () => {
-  const transition = document.querySelector(".gym-page-transition");
-  transition.classList.remove("is-active");
-  // Open modal on load if url has any query parameter
-  const params = new URLSearchParams(document.location.search);
-  if (params.size > 0) {
-    openModal();
-  }
-};
+const transition = document.querySelector(".gym-page-transition");
+transition.classList.remove("is-active");
+// Open modal on load if url has any query parameter
+const params = new URLSearchParams(document.location.search);
+if (params.size > 0) {
+  openModal();
+}
 
 // Fix section large image on scroll
 const fixedImage = document.querySelector(".fixed-image");
