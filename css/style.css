@@ -1437,12 +1437,19 @@ section.the-wall .gym-logo {
     margin: 0 -1rem;
   }
 
+  .form-slider label {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
+
   .form-slider .left-label {
     padding-left: 0rem;
+    padding-right: 0.5rem;
   }
 
   .form-slider .right-label {
     padding-right: 0rem;
+    padding-left: 0.5rem;
   }
 
   form .text-field {
@@ -1482,6 +1489,10 @@ section.the-wall .gym-logo {
     padding: calc(var(--gym-page-pad) / 2);
   }
 
+  .gym-header .title-container {
+    bottom: -1rem;
+  }
+
   .gym-header h1.gym-page-title {
     padding-right: 1.5rem;
   }
@@ -1493,6 +1504,14 @@ section.the-wall .gym-logo {
   section.the-story {
     margin-top: calc(var(--gym-page-pad) / 2);
     /* padding: 2.5rem calc(var(--gym-page-pad) / 2); */
+  }
+
+  section.the-story article {
+    padding-top: calc(var(--gym-page-pad) / 2);
+  }
+
+  section.the-story article h2 {
+    padding-bottom: 2rem;
   }
 
   .neighbourhood-content {
@@ -1522,12 +1541,17 @@ section.the-wall .gym-logo {
     padding-bottom: 0;
   }
 
+  section.the-wall .img-container {
+    position: relative;
+    top: -10rem;
+  }
+
   section.the-wall img {
     width: 40%;
   }
   section.the-wall article.the-wall-container {
     padding: calc(var(--gym-page-pad) / 2);
-    max-width: 80vw;
+    max-width: 90%;
   }
 
   .social-initiatives article {
@@ -1538,6 +1562,10 @@ section.the-wall .gym-logo {
 
   .social-initiatives header {
     padding: 0;
+  }
+
+  .social-initiatives h4 {
+    max-width: 95%;
   }
 
   .social-initiatives .grid-group {
@@ -1563,16 +1591,16 @@ section.the-wall .gym-logo {
   }
 
   .grid-2 {
-    padding-bottom: 1rem;
+    margin-bottom: 1rem;
   }
 
   .grid-3 {
-    padding-bottom: 1rem;
+    margin-bottom: 1rem;
     /* order: 1; */
   }
 
   .grid-4 {
-    padding-bottom: 1rem;
+    margin-bottom: 1rem;
     max-width: 70vw;
     /* margin-top: calc(var(--gym-page-pad) / 2); */
   }
@@ -1594,7 +1622,7 @@ section.the-wall .gym-logo {
   .social-initiatives .card-group.card-1 img,
   .social-initiatives .card-group.card-2 img {
     width: 100%;
-    padding-bottom: 1rem;
+    margin-bottom: 1rem;
   }
 
   .social-initiatives .card-group.card-2 .img-filter {
