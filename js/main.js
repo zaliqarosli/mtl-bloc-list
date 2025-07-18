@@ -64,6 +64,7 @@ const footer = body.querySelector('footer');
 body.prepend(createDirectoryPage());
 
 // Open directory page modal with transition
+const header = body.querySelector('header');
 const nav = document.querySelector('.header-nav');
 const openIcon = document.querySelector('.menu-target');
 const closeIcon = document.querySelector('.close-icon');
@@ -102,8 +103,9 @@ function openModal() {
   setTimeout(() => {
     // Display modal
     modal.classList.toggle('is-active');
-    // Hide main and footer, and fix nav so that the page length
+    // Hide main and footer, and fix header and nav so that the page length
     // doesn't extend beyond the modal
+    header.classList.toggle('fixed');
     nav.classList.toggle('fixed');
     main.classList.toggle('hidden');
     footer.classList.toggle('hidden');
@@ -112,7 +114,8 @@ function openModal() {
 
 function closeModal() {
   // Reverse openModal
-  // Unhide main and footer, and unfix nav
+  // Unhide main and footer, and unfix header and nav
+  header.classList.toggle('fixed');
   nav.classList.toggle('fixed');
   main.classList.toggle('hidden');
   footer.classList.toggle('hidden');

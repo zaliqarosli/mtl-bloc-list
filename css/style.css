@@ -36,6 +36,10 @@ header {
   padding-bottom: 5rem;
 }
 
+header.fixed {
+  position: fixed;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -746,6 +750,7 @@ input::file-selector-button {
   left: 0;
   /* Crucial to fix extra space showing on mobile */
   overflow: hidden;
+  min-height: 100vh;
 }
 
 .directory-page.is-active {
@@ -760,6 +765,7 @@ input::file-selector-button {
 .directory-map img.map {
   max-height: 100vh;
   display: block;
+  min-height: 100vh;
 }
 
 .directory-map img.pin {
@@ -901,7 +907,7 @@ a.join:active {
 }
 
 /* Media Queries */
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1200px) and (orientation: landscape) {
   .directory-list-items {
     column-count: 2;
   }
@@ -916,6 +922,9 @@ a.join:active {
   .directory-page {
     flex-flow: column-reverse;
     justify-content: flex-end;
+  }
+  .directory-map img.map {
+    min-height: auto;
   }
   .directory-list-items {
     column-count: 1;
