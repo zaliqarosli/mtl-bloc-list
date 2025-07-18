@@ -1,7 +1,7 @@
 // Declare global variables
 let items;
-const json = "json/directory.json";
-const logoContainer = document.querySelector(".logo-container");
+const json = 'json/directory.json';
+const logoContainer = document.querySelector('.logo-container');
 
 // Get json data, set global data variable
 fetch(json)
@@ -17,10 +17,10 @@ fetch(json)
   .catch((error) => console.error(error.message));
 
 // Add event listener to slider
-const slider = document.querySelector(".slider");
-slider.addEventListener("input", () => {
+const slider = document.querySelector('.slider');
+slider.addEventListener('input', () => {
   // Remove initial placeholder logo
-  if (logoContainer.classList.contains("heart-placeholder")) {
+  if (logoContainer.classList.contains('heart-placeholder')) {
     removePlaceholder(logoContainer);
   }
 
@@ -30,12 +30,12 @@ slider.addEventListener("input", () => {
 });
 
 // Add event listener to 'Not sure' button
-const notSure = document.querySelector(".not-sure");
-notSure.addEventListener("click", () => {
+const notSure = document.querySelector('.not-sure');
+notSure.addEventListener('click', () => {
   // Append beginner query parameter to url
   const url = new URL(location);
-  url.searchParams.set("beginner", true);
-  history.replaceState({}, "", url);
+  url.searchParams.set('beginner', true);
+  history.replaceState({}, '', url);
   // Open modal
   openModal();
   setTimeout(() => {
@@ -44,10 +44,10 @@ notSure.addEventListener("click", () => {
 });
 
 // Add event listener to 'Feeling lucky' button
-const lucky = document.querySelector(".lucky");
-lucky.addEventListener("click", () => {
+const lucky = document.querySelector('.lucky');
+lucky.addEventListener('click', () => {
   // Remove initial placeholder logo
-  if (logoContainer.classList.contains("heart-placeholder")) {
+  if (logoContainer.classList.contains('heart-placeholder')) {
     removePlaceholder(logoContainer);
   }
   const item = randomizeLogo();
@@ -56,26 +56,26 @@ lucky.addEventListener("click", () => {
 });
 
 // Get body's main and footer
-const body = document.querySelector("body");
-const main = body.querySelector("main");
-const footer = body.querySelector("footer");
+const body = document.querySelector('body');
+const main = body.querySelector('main');
+const footer = body.querySelector('footer');
 
 // Create directory page HTML
 body.prepend(createDirectoryPage());
 
 // Open directory page modal with transition
-const nav = document.querySelector(".header-nav");
-const openIcon = document.querySelector(".menu-target");
-const closeIcon = document.querySelector(".close-icon");
-const menuIcon = document.querySelector(".menu-icon");
-const modal = document.querySelector(".directory-page");
+const nav = document.querySelector('.header-nav');
+const openIcon = document.querySelector('.menu-target');
+const closeIcon = document.querySelector('.close-icon');
+const menuIcon = document.querySelector('.menu-icon');
+const modal = document.querySelector('.directory-page');
 
-openIcon.addEventListener("click", openModal);
-closeIcon.addEventListener("click", closeModal);
+openIcon.addEventListener('click', openModal);
+closeIcon.addEventListener('click', closeModal);
 
 // Open directory with call to action
-const cta = document.querySelector("#call-to-action");
-cta.addEventListener("click", () => {
+const cta = document.querySelector('#call-to-action');
+cta.addEventListener('click', () => {
   openModal();
   setTimeout(() => {
     document.body.scrollTop = document.documentElement.scrollTop = 0;
@@ -93,47 +93,47 @@ window.onload = () => {
 // LANDING PAGE HELPER FUNCTIONS
 function openModal() {
   // Bring nav to the highest z-index
-  nav.classList.toggle("front");
+  nav.classList.toggle('front');
   // Trigger modal transition
-  openIcon.classList.toggle("blown");
+  openIcon.classList.toggle('blown');
   // Remove menu-icon from display
-  menuIcon.classList.toggle("hidden");
+  menuIcon.classList.toggle('hidden');
   // After modal transition completes, change the display
   setTimeout(() => {
     // Display modal
-    modal.classList.toggle("is-active");
+    modal.classList.toggle('is-active');
     // Hide main and footer, and fix nav so that the page length
     // doesn't extend beyond the modal
-    nav.classList.toggle("fixed");
-    main.classList.toggle("hidden");
-    footer.classList.toggle("hidden");
+    nav.classList.toggle('fixed');
+    main.classList.toggle('hidden');
+    footer.classList.toggle('hidden');
   }, 400);
 }
 
 function closeModal() {
   // Reverse openModal
   // Unhide main and footer, and unfix nav
-  nav.classList.toggle("fixed");
-  main.classList.toggle("hidden");
-  footer.classList.toggle("hidden");
+  nav.classList.toggle('fixed');
+  main.classList.toggle('hidden');
+  footer.classList.toggle('hidden');
   // Close modal display
-  modal.classList.toggle("is-active");
+  modal.classList.toggle('is-active');
   // Trigger modal transition
-  openIcon.classList.toggle("blown");
+  openIcon.classList.toggle('blown');
   // Remove any query params from URL
   const url = new URL(location);
-  history.replaceState({}, "", url.pathname);
+  history.replaceState({}, '', url.pathname);
   setTimeout(() => {
     // Return menu-icon to display after modal transition completes
-    menuIcon.classList.toggle("hidden");
+    menuIcon.classList.toggle('hidden');
     // Remove nav z-index
-    nav.classList.toggle("front");
+    nav.classList.toggle('front');
   }, 200);
 }
 
 const removePlaceholder = (logoContainer) => {
   // Remove placeholder class name, add grow-on-hover class
-  logoContainer.classList.remove("heart-placeholder");
+  logoContainer.classList.remove('heart-placeholder');
   logoContainer.innerHTML = `
       <a href="" class="logo-href">
           <img
@@ -153,34 +153,34 @@ const generateLogo = (score) => {
   const logoReset = rotateBy * -1;
 
   // Select elements
-  const rotatingGroup = document.querySelector(".rotating-group");
-  const logoHref = document.querySelector(".logo-href");
-  const logoGraphic = document.querySelector(".logo-graphic");
+  const rotatingGroup = document.querySelector('.rotating-group');
+  const logoHref = document.querySelector('.logo-href');
+  const logoGraphic = document.querySelector('.logo-graphic');
 
   // Change logo data and rotation
   rotatingGroup.style.transform = `rotate(${rotateBy}deg)`;
-  logoContainer.classList.add("heartbeat-out");
-  logoHref.href = item.id ? `${item.id}.html` : "#";
-  logoGraphic.src = item.logo.src || "";
-  logoGraphic.alt = `logo of ${item.name || "climbing gym"}, montreal`;
+  logoContainer.classList.add('heartbeat-out');
+  logoHref.href = item.id ? `${item.id}.html` : '#';
+  logoGraphic.src = item.logo.src || '';
+  logoGraphic.alt = `logo of ${item.name || 'climbing gym'}, montreal`;
   logoGraphic.style.transform = `rotate(${logoReset}deg)`;
 
   // Add gym page transition effect
-  logoHref.addEventListener("click", function (e) {
+  logoHref.addEventListener('click', function (e) {
     e.preventDefault();
 
     // Set target from logo href const because e.target targets img inside anchor element
     const target = this.href;
 
     // Remove logo image and pink hold from display
-    logoGraphic.style.display = "none";
+    logoGraphic.style.display = 'none';
     setTimeout(() => {
-      document.querySelector(".pink-center-hold").style.display = "none";
+      document.querySelector('.pink-center-hold').style.display = 'none';
     }, 100);
 
     // Blow up logoHref element
-    this.style.border = "none";
-    this.classList.add("blown");
+    this.style.border = 'none';
+    this.classList.add('blown');
 
     // Redirect to target after 400ms delay
     setTimeout(() => {
@@ -216,12 +216,12 @@ function createDirectoryPage() {
   const fragment = document.createDocumentFragment();
 
   // Container div
-  const directoryPage = document.createElement("div");
-  directoryPage.classList.add("directory-page");
+  const directoryPage = document.createElement('div');
+  directoryPage.classList.add('directory-page');
 
   // Map section
-  const mapSection = document.createElement("section");
-  mapSection.classList.add("directory-map", "fade-in");
+  const mapSection = document.createElement('section');
+  mapSection.classList.add('directory-map', 'fade-in');
   mapSection.innerHTML = `
     <div class="map-pins">
     </div>
@@ -235,8 +235,8 @@ function createDirectoryPage() {
   `;
 
   // Directory content section
-  const contentSection = document.createElement("section");
-  contentSection.classList.add("directory-content", "slide-in-right");
+  const contentSection = document.createElement('section');
+  contentSection.classList.add('directory-content', 'slide-in-right');
   contentSection.innerHTML = `
     <nav>
       <p>Montreal's Bouldering Gym Directory</p>
