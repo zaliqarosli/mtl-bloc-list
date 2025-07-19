@@ -760,12 +760,12 @@ input::file-selector-button {
 .directory-map {
   position: relative;
   height: fit-content;
+  flex-shrink: 0;
 }
 
 .directory-map img.map {
   max-height: 100vh;
   display: block;
-  min-height: 100vh;
 }
 
 .directory-map img.pin {
@@ -862,14 +862,6 @@ li {
   position: relative;
 }
 
-.cta-small {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  padding-bottom: 0.3rem;
-  max-width: 10rem;
-}
-
 /* --- CUSTOM LINK STYLING --- */
 /* .directory-list-items {
   padding-bottom: 2rem;
@@ -907,31 +899,22 @@ a.join:active {
 }
 
 /* Media Queries */
-@media screen and (max-width: 1200px) and (orientation: landscape) {
+@media screen and (max-width: 1280px) and (max-height: 666px) and (orientation: landscape) {
   .directory-list-items {
     column-count: 2;
   }
-
-  .cta-small {
-    position: static;
-    max-width: none;
+  fieldset {
+    padding-top: 1rem;
   }
 }
 
-@media screen and (max-width: 960px) {
+@media screen and ((orientation: portrait) or ((max-width: 1024px) and (min-height: 601px) and (orientation: landscape))) {
   .directory-page {
     flex-flow: column-reverse;
     justify-content: flex-end;
   }
-  .directory-map img.map {
-    min-height: auto;
-  }
   .directory-list-items {
     column-count: 1;
-  }
-  .cta-small {
-    position: absolute;
-    max-width: 10rem;
   }
 }
 
@@ -1433,11 +1416,6 @@ section.the-wall .gym-logo {
   .contact-links > p {
     max-width: 30%;
     text-align: center;
-  }
-
-  .cta-small {
-    position: static;
-    max-width: none;
   }
 
   form {
