@@ -59,6 +59,12 @@ nav.fixed {
 }
 
 /* --- DEFAULT LINK STYLING --- */
+
+a,
+span {
+  -webkit-tap-highlight-color: transparent;
+}
+
 a:link {
   text-decoration: none;
   color: inherit;
@@ -368,6 +374,7 @@ button {
   border-radius: 50px;
   margin: 0 0.5rem;
   border: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .background-holds {
