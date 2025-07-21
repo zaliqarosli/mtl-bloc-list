@@ -37,21 +37,24 @@ body {
   background-color: lightgray;
 }
 
-.coming-soon {
-  color: var(--light);
+.footer {
   background-color: var(--grey);
-  display: flex;
-  flex-flow: column;
-  /* align-items: flex-end; */
-  /* max-width: 50%; */
-  /* padding: 3rem; */
-  padding: 1rem;
+  height: 5rem;
   z-index: 2;
 }
 
-.coming-soon h1 {
-  text-align: center;
-  margin-top: 10vh;
+.coming-soon {
+  padding: 1rem;
+  z-index: 4;
+  position: absolute;
+  bottom: 0.25rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.coming-soon > h3 {
+  color: var(--light);
 }
 
 .wall-container {
@@ -83,7 +86,7 @@ body {
   flex-direction: column;
   align-items: end;
   justify-content: center;
-  padding: 6rem 6rem 4rem 6rem;
+  padding: 8rem 8rem 6rem;
   gap: 1rem;
   width: min-content;
   flex-grow: 1;
@@ -119,39 +122,36 @@ body {
 
 .overhang-section {
   border-left: var(--bright-grey) solid 1px;
-  flex-basis: 50vw;
-}
-
-.graphics-container {
-  position: absolute;
-  right: -25px;
-  bottom: 40px;
-  z-index: 3;
+  flex-basis: 45vw;
 }
 
 .right-side-grey-container {
   display: flex;
   justify-content: end;
   background-color: var(--bright-grey);
-  clip-path: polygon(0% 0%, 70% 100%, 100% 0);
-  flex-basis: 50vw;
+  clip-path: polygon(0% 0%, 70% 85%, 100% 0);
+  flex-basis: 45vw;
 }
 
 .tools-container {
+  position: absolute;
+  right: -25px;
+  bottom: 40px;
+  z-index: 3;
   display: flex;
   justify-content: end;
   align-items: end;
 }
 
 .tool {
-  width: 8%;
+  width: 10%;
   height: 100%;
   position: relative;
-  right: -24%;
+  right: -50%;
 }
 
 .ladder {
-  width: 40%;
+  width: 70%;
   /* float: right;
   position: absolute; */
   /* right: 0;
@@ -160,42 +160,43 @@ body {
 
 .background-holds {
   opacity: 1;
+  position: relative;
+  height: 100%;
 }
 
 .background-holds > img {
   max-width: 14%;
-  /* position: absolute; */
 }
 
 .background-holds > img.yellow-hold {
-  /* right: 33%; */
-  position: unset;
+  max-width: 10%;
+  top: 25%;
+  transform: rotate(20deg);
+  left: 26%;
 }
 
 .background-holds > img.green-hold {
   max-width: 6%;
-  /* top: 11%;
-  left: -1vw; */
-  position: unset;
+  left: 10%;
+  transform: rotate(160deg);
 }
 
 .background-holds > img.purple-hold {
   max-width: 8%;
-  /* top: 15%;
-  right: -2.5vw; */
-  position: unset;
+  top: 45%;
+  right: 25%;
+  transform: rotate(30deg);
 }
 
 .background-holds > img.red-hold {
   max-width: 5%;
-  /* top: 40%;
-  right: 7vw; */
-  position: unset;
+  top: 52%;
+  right: 50%;
 }
 
 .background-holds > img.pink-hold {
   max-width: 5%;
-  /* top: 40%;
-  right: 7vw; */
-  position: unset;
+  top: 70%;
+  left: 20%;
+  transform: rotate(45deg);
 }
