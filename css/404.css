@@ -39,22 +39,21 @@ body {
 .footer {
   background-color: var(--grey);
   min-height: 5rem;
+  height: auto;
+  width: 100vw;
   z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow-x: clip;
 }
 
 .coming-soon {
+  color: var(--light);
   padding: 1rem;
   z-index: 4;
-  position: fixed;
-  bottom: 0.25rem;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
   text-align: center;
-}
-
-.coming-soon > h3 {
-  color: var(--light);
 }
 
 .wall-container {
@@ -139,9 +138,9 @@ body {
 }
 
 .tools-container {
-  position: fixed;
+  position: absolute;
   right: -25px;
-  bottom: 3rem;
+  top: -17rem;
   z-index: 3;
   display: flex;
   justify-content: end;
@@ -256,12 +255,6 @@ body {
   .footer {
     min-height: 6rem;
   }
-  .tools-container {
-    bottom: 4.5rem;
-  }
-  .coming-soon {
-    bottom: 0.75rem;
-  }
   .slant-col {
     padding: 6rem 6rem 4rem;
   }
@@ -346,12 +339,6 @@ body {
   }
   .footer {
     min-height: 8rem;
-  }
-  .tools-container {
-    bottom: 6.5rem;
-  }
-  .coming-soon {
-    bottom: 1.75rem;
   }
   .background-holds > img.purple-hold {
     top: 26%;
