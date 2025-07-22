@@ -38,7 +38,7 @@ body {
 
 .footer {
   background-color: var(--grey);
-  height: 5rem;
+  min-height: 5rem;
   z-index: 2;
 }
 
@@ -254,7 +254,7 @@ body {
     font-size: 1.5rem;
   }
   .footer {
-    height: 6rem;
+    min-height: 6rem;
   }
   .tools-container {
     bottom: 4.5rem;
@@ -345,7 +345,7 @@ body {
     padding: 6rem 3rem 3rem;
   }
   .footer {
-    height: 8rem;
+    min-height: 8rem;
   }
   .tools-container {
     bottom: 6.5rem;
